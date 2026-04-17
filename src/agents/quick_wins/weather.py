@@ -63,8 +63,9 @@ VENUE_COORDS = {
 }
 
 
-def fetch_weather(lat: float, lon: float, start: str, end: str) -> pd.DataFrame:
-    """Fetch daily weather from Open-Meteo archive API."""
+def fetch_weather(lat: float, lon: float, start: str, end: str,
+                  retries: int = 4, base_delay: float = 8.0) -> pd.DataFrame:
+    """Fetch daily weather from Open-Meteo archive API with retry/backoff."""
     url = (
         f"https://archive-api.open-meteo.com/v1/archive"
         f"?latitude={lat}&longitude={lon}"
@@ -72,22 +73,29 @@ def fetch_weather(lat: float, lon: float, start: str, end: str) -> pd.DataFrame:
         f"&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,windspeed_10m_max"
         f"&timezone=auto"
     )
-    try:
-        with urllib.request.urlopen(url, timeout=15) as resp:
-            data = json.loads(resp.read())
-        daily = data["daily"]
-        df = pd.DataFrame({
-            "date":          pd.to_datetime(daily["time"]),
-            "temp_max":      daily["temperature_2m_max"],
-            "temp_min":      daily["temperature_2m_min"],
-            "precipitation": daily["precipitation_sum"],
-            "wind_max":      daily["windspeed_10m_max"],
-        })
-        df["temp_avg"] = (df["temp_max"] + df["temp_min"]) / 2
-        return df
-    except Exception as e:
-        print(f"    Weather fetch failed ({lat},{lon}): {e}")
-        return pd.DataFrame()
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(url, timeout=20) as resp:
+                data = json.loads(resp.read())
+            daily = data["daily"]
+            df = pd.DataFrame({
+                "date":          pd.to_datetime(daily["time"]),
+                "temp_max":      daily["temperature_2m_max"],
+                "temp_min":      daily["temperature_2m_min"],
+                "precipitation": daily["precipitation_sum"],
+                "wind_max":      daily["windspeed_10m_max"],
+            })
+            df["temp_avg"] = (df["temp_max"] + df["temp_min"]) / 2
+            return df
+        except Exception as e:
+            if "429" in str(e) and attempt < retries - 1:
+                wait = base_delay * (2 ** attempt)
+                print(f"    Rate limited — waiting {wait:.0f}s before retry {attempt+1}/{retries-1}...")
+                time.sleep(wait)
+            else:
+                print(f"    Weather fetch failed ({lat},{lon}): {e}")
+                return pd.DataFrame()
+    return pd.DataFrame()
 
 
 def build_weather_dataset(df: pd.DataFrame) -> pd.DataFrame:
@@ -117,7 +125,7 @@ def build_weather_dataset(df: pd.DataFrame) -> pd.DataFrame:
             print(f"    {venue} ({lat},{lon}) {min_date}→{max_date}")
             wdf = fetch_weather(lat, lon, min_date, max_date)
             venues_done[(lat, lon)] = wdf
-            time.sleep(0.3)   # be polite to free API
+            time.sleep(2.0)   # polite delay between unique venue requests
 
         if wdf.empty:
             continue
@@ -146,6 +154,8 @@ def analyse(df: pd.DataFrame) -> dict:
         return {"error": "insufficient weather-matched data"}
 
     sub["home_win"] = (sub["result"] == "home_win").astype(int)
+    # Drop rows where any key column is NaN to avoid shape mismatches
+    sub = sub.dropna(subset=["temp_avg", "total_points", "wind_max", "precipitation"]).copy()
     results = {}
 
     # ── Temperature vs total score ─────────────────────────────────────────

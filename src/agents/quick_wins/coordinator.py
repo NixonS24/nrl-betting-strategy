@@ -67,8 +67,8 @@ def wet_conditions_flag(precipitation_mm: float) -> bool:
 
 
 def run_agents() -> dict:
-    """Run all three agents and collect results."""
-    from src.agents.quick_wins import rest_fatigue, weather, clv_tracker
+    """Run all five agents and collect results."""
+    from src.agents.quick_wins import rest_fatigue, weather, clv_tracker, referee_bias, form_filter
 
     print("=" * 62)
     print("  QUICK WINS COORDINATOR")
@@ -77,26 +77,19 @@ def run_agents() -> dict:
 
     results = {}
 
-    # Agent 1 — Rest / Fatigue
-    try:
-        results["rest_fatigue"] = rest_fatigue.run()
-    except Exception as e:
-        print(f"\n[Agent 1] FAILED: {e}")
-        results["rest_fatigue"] = {"agent": "rest_fatigue", "significant": False, "error": str(e)}
-
-    # Agent 2 — Weather
-    try:
-        results["weather"] = weather.run()
-    except Exception as e:
-        print(f"\n[Agent 2] FAILED: {e}")
-        results["weather"] = {"agent": "weather", "significant": False, "error": str(e)}
-
-    # Agent 3 — CLV Tracker
-    try:
-        results["clv_tracker"] = clv_tracker.run()
-    except Exception as e:
-        print(f"\n[Agent 3] FAILED: {e}")
-        results["clv_tracker"] = {"agent": "clv_tracker", "significant": False, "error": str(e)}
+    for key, module, label in [
+        ("rest_fatigue", rest_fatigue, "Agent 1: Rest & Travel Fatigue"),
+        ("weather",      weather,      "Agent 2: Weather Overlay"),
+        ("clv_tracker",  clv_tracker,  "Agent 3: CLV Tracker"),
+        ("referee_bias", referee_bias, "Agent 4: Referee Bias"),
+        ("form_filter",  form_filter,  "Agent 5: Form Filter Overlay"),
+    ]:
+        try:
+            print(f"\n{'─'*62}\n  Running {label}...")
+            results[key] = module.run()
+        except Exception as e:
+            print(f"  FAILED: {e}")
+            results[key] = {"agent": key, "significant": False, "error": str(e)}
 
     return results
 
@@ -144,6 +137,8 @@ def write_coordinator_report(results: dict, integrated: list[str]) -> str:
         ("rest_fatigue", "Rest & Travel Fatigue"),
         ("weather",      "Weather Overlay"),
         ("clv_tracker",  "CLV Tracker"),
+        ("referee_bias", "Referee Bias"),
+        ("form_filter",  "Form Filter Overlay"),
     ]:
         r = results.get(key, {})
         sig  = "Yes" if r.get("significant") else "No"
@@ -185,7 +180,7 @@ def main():
     print("  INTEGRATION DECISION")
     print("=" * 62)
 
-    for key in ["rest_fatigue", "weather", "clv_tracker"]:
+    for key in ["rest_fatigue", "weather", "clv_tracker", "referee_bias", "form_filter"]:
         r = results.get(key, {})
         sig = r.get("significant", False)
         label = key.replace("_", " ").title()

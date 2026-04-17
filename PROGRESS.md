@@ -7,39 +7,38 @@
 
 ---
 
-## Summary
+## Quick Summary
 
-An NRL betting strategy built on statistically significant venue bias.  
-Three data sources merged (5,435 matches, 1998–2026). Venue bias confirmed  
-at p<0.0001. Bookmaker backtest: 79 bets, +9.32% ROI. Live from Round 7 2026.
+An NRL betting strategy built on statistically significant venue bias.
+5,435 matches analysed (1998–2026), three data sources merged.
+Venue bias confirmed p<0.0001. Bookmaker backtest: **79 bets, +9.32% ROI**.
+Live from Round 7 2026. Five analysis agents built and run.
 
 ---
 
 ## Sessions Completed
 
 ### Session 1 — 2026-04-14
-- [x] Created project structure (`src/`, `data/raw/`, `data/processed/`, `notebooks/`)
-- [x] Built four-agent research pipeline (`src/agents/team.py`)
-- [x] Installed Python 3.11 + all dependencies
+- [x] Project structure, four-agent pipeline, Python 3.11 + dependencies
 
-### Session 2 — 2026-04-14 (continued)
-- [x] Fetched uselessnrlstats CSVs (1998–2025, match history)
-- [x] Fetched Betfair exchange CSVs (2021–2026, exchange odds)
-- [x] Integrated manually downloaded AusSportsBetting xlsx (2009–2026, bookmaker odds)
-- [x] Built data pipeline → `data/processed/nrl_clean.csv` (5,435 rows × 41 cols)
-- [x] Ran statistical analysis across three biases
-- [x] Identified Venue Bias as primary exploitable signal
+### Session 2 — 2026-04-14
+- [x] Fetched all data sources (uselessnrlstats, Betfair, AusSportsBetting)
+- [x] Built data pipeline → `nrl_clean.csv` (5,435 rows × 41 cols)
+- [x] Statistical analysis across three biases; Venue Bias confirmed
 
 ### Session 3 — 2026-04-17
-- [x] Built venue bias backtest (`src/strategy/venue_bias.py`)
-- [x] Refined strategy — removed Cbus Super Stadium (−10.3% ROI drag)
-- [x] Generated professional Word report (`data/processed/NRL_Bias_Research_Report.docx`)
-- [x] Built weekend picks generator (`src/strategy/weekend_picks.py`)
-- [x] Generated Round 7 2026 betting card
-- [x] Initialised GitHub repo — https://github.com/NixonS24/nrl-betting-strategy
-- [x] Researched strategy extensions (referee bias, weather, CLV, ML models)
-- [x] Built Quick Wins agent system (3 agents + coordinator)
-- [x] Ran all quick win agents — CLV infrastructure confirmed significant
+- [x] Venue bias backtest — refined to remove Cbus Super Stadium (−10.3% ROI drag)
+- [x] Word report generated (`NRL_Bias_Research_Report.docx`)
+- [x] Weekend picks generator — Round 7 card produced
+- [x] GitHub repo initialised and pushed
+- [x] Quick Wins system: 3 agents (rest/fatigue, weather, CLV) + coordinator
+- [x] CLV tracking infrastructure live
+
+### Session 4 — 2026-04-17 (continued)
+- [x] Referee Bias agent (Agent 4) — proxy analysis complete, real data collection planned
+- [x] Form Filter agent (Agent 5) — tested, not integrated (ROI neutral at 3/5, worse at 4/5)
+- [x] Weather agent NaN bug fixed (dropna alignment), re-running with full dataset
+- [x] Coordinator updated to run all 5 agents
 
 ---
 
@@ -47,18 +46,19 @@ at p<0.0001. Bookmaker backtest: 79 bets, +9.32% ROI. Live from Round 7 2026.
 
 | Bias | Test | Result | Key Finding |
 |---|---|---|---|
-| Draw Bias | Chi-square | p=0.62 — not significant | NRL draw rate only 1%, no draw market on Betfair |
-| Form/Momentum | Point-biserial | p<0.0001, r=0.20 | Real effect but Betfair already prices it (r=0.66) |
-| **Venue/Home Bias** | ANOVA + t-tests | **p<0.0001, F=4.33** | Large, persistent, exploitable at specific venues |
+| Draw Bias | Chi-square | p=0.62 — not significant | NRL draw rate 1%, no draw market |
+| Form/Momentum | Point-biserial | p<0.0001, r=0.20 | Real but Betfair already prices it (r=0.66) |
+| **Venue/Home Bias** | ANOVA + t-tests | **p<0.0001, F=4.33** | Large, persistent, exploitable |
+| Home advantage trend | Linear regression | **p=0.015, r=−0.45** | Declining ~0.19%/yr — monitor |
 
 ---
 
 ## Strategy: Venue Bias
 
 ### Rules
-- **Back home** when venue has historically elevated home win rate AND bookmaker odds imply probability < (base rate − 5%)
-- **Fade home (back away)** when venue home team historically underperforms AND market overprices home
-- Odds range: $1.50 – $6.00 | Staking: Quarter Kelly | Min edge: 5%
+- **Back home** when venue base HW rate − bookmaker implied prob ≥ 5%
+- **Fade home (back away)** when venue base away rate − bookmaker implied away prob ≥ 5%
+- Odds range: $1.50–$6.00 | Staking: Quarter Kelly | Min edge: 5%
 
 ### Target Venues
 
@@ -78,30 +78,31 @@ at p<0.0001. Bookmaker backtest: 79 bets, +9.32% ROI. Live from Round 7 2026.
 | Bookmaker (primary) | 79 | 55.7% | +$736 | **+9.32%** | $567 |
 | Betfair validation | 9 | 77.8% | +$628 | **+69.78%** | $100 |
 
-**By venue (bookmaker backtest):**
-- AAMI Park: 43 bets, 30W, +$866, ROI **+20.1%**
-- Campbelltown Sports Stadium: 34 bets, 13W, −$81, ROI −2.4%
-- Olympic Park Stadium: 2 bets, 1W, −$49
+**AAMI Park alone:** 43 bets, 30W, +$866, ROI +20.1%
 
 ---
 
-## Quick Wins Agent Results — 2026-04-17
+## Quick Wins Agent Results
 
 Run with: `python -m src.agents.quick_wins.coordinator`
 
-| Agent | Finding | Integrated? |
-|---|---|---|
-| Rest & Travel Fatigue | Away short rest improves home win rate by only 1.6% (p=0.27) — not significant | No |
-| Weather Overlay | Wet conditions suppress scoring by 6.9 pts (37 vs 44 avg) — partial data, p=nan | No (retry needed) |
-| **CLV Tracker** | **Home odds shortening predicts 63% win rate vs 48% when drifting (p<0.0001)** | Yes — ledger live |
+| # | Agent | Finding | Verdict |
+|---|---|---|---|
+| 1 | Rest & Travel Fatigue | Away short rest: +1.6% HW rate improvement (p=0.27) | Not significant — skip |
+| 2 | Weather Overlay | Wet games average **4.8 fewer points** (39.2 vs 44.0, 3,556 matches) | Not significant yet — NaN bug fix in progress |
+| 3 | **CLV Tracker** | Home odds shortening → **63% win rate** vs 48% when drifting (p<0.0001) | **Integrated — bet early in week** |
+| 4 | Referee Bias | Home advantage declining −0.19%/yr (**p=0.015**); full ref data needed | **Partial — collect ref assignments** |
+| 5 | Form Filter | 3/5 threshold: ROI 9.20% (−0.12%). 4/5: ROI −2.45%. No improvement. | Not integrated — venue signal standalone |
 
-### CLV Key Insight
-When home team odds shorten from open to close, that team wins **63%** of the time.
-Placing bets **early in the week** (before market adjusts) maximises CLV.
+### Key Insights
+- **Bet early in the week** — when home odds shorten, team wins 63% of the time (CLV signal)
+- **Home advantage is declining** — ~0.19%/yr over 27 seasons; re-check venue baselines annually
+- **Weather suppresses scoring** — wet conditions cut average score by 4.8 pts; confirm with full stats then use for overs/unders
+- **Form filter hurts** — adding form requirement reduces sample size without improving ROI
 
 ---
 
-## Round 7 — Active Bet (2026-04-17)
+## Round 7 — Active Bet
 
 | Field | Value |
 |---|---|
@@ -110,92 +111,88 @@ Placing bets **early in the week** (before market adjusts) maximises CLV.
 | Venue | Campbelltown Sports Stadium |
 | Bet | **Back Brisbane Broncos** (fade home) |
 | Odds | $2.45 |
-| Edge | 21.3% (venue base away rate 62.1% vs market-implied 40.8%) |
+| Edge | 21.3% |
 | Stake | $8.99 (¼ Kelly on $100 bankroll) |
-| Expected profit | +$4.69 |
 
 Log result in: `data/processed/quick_wins/bet_ledger.csv`
 
 ---
 
-## Codebase
+## Codebase Map
 
 ```
 src/
-  ingestion/
-    pipeline.py              — merges all 3 data sources → nrl_clean.csv
-  analysis/
-    bias_analysis.py         — statistical tests for all 3 biases
+  ingestion/pipeline.py          — merges 3 sources → nrl_clean.csv
+  analysis/bias_analysis.py      — statistical tests for all 3 biases
   strategy/
-    venue_bias.py            — backtest engine + Kelly staking
-    generate_report.py       — Word doc report generator
-    weekend_picks.py         — weekly betting card (run each round)
+    venue_bias.py                — backtest engine + Kelly staking
+    generate_report.py           — Word doc report
+    weekend_picks.py             — weekly betting card generator
   agents/
-    team.py                  — original 4-agent research pipeline
+    team.py                      — original 4-agent research pipeline
     quick_wins/
-      coordinator.py         — runs all 3 quick win agents
-      rest_fatigue.py        — Agent 1: rest days & travel
-      weather.py             — Agent 2: temperature/rain/wind
-      clv_tracker.py         — Agent 3: CLV infrastructure
+      coordinator.py             — runs all 5 agents, integrates signals
+      rest_fatigue.py            — Agent 1: rest days & travel
+      weather.py                 — Agent 2: temperature/rain/wind
+      clv_tracker.py             — Agent 3: CLV infrastructure
+      referee_bias.py            — Agent 4: referee assignment bias
+      form_filter.py             — Agent 5: form overlay test
 
-data/
-  raw/
-    nrlmanualdownlaod.xlsx   — AusSportsBetting bookmaker odds (2009–2026)
-    uselessnrlstats/         — Match history CSVs (1998–2025)
-    betfair/                 — Exchange odds CSVs (2021–2026)
-  processed/
-    nrl_clean.csv            — Unified dataset (5,435 rows × 41 cols)
-    NRL_Bias_Research_Report.docx
-    weekend_picks_r7_2026.txt
-    quick_wins/
-      bet_ledger.csv         — Live bet tracking (fill each week)
-      coordinator_report.md
-      rest_fatigue_findings.md
-      weather_findings.md
-      clv_tracker_findings.md
+data/processed/
+  nrl_clean.csv                  — unified dataset (5,435 × 41)
+  NRL_Bias_Research_Report.docx  — full research report
+  weekend_picks_r7_2026.txt      — R7 betting card
+  WEEKLY_SUMMARY_R7_2026.md      — R7 summary
+  quick_wins/
+    bet_ledger.csv               — FILL IN after each game
+    coordinator_report.md
+    rest_fatigue_findings.md
+    weather_findings.md          — 3,556 matches, NaN fix pending
+    clv_tracker_findings.md
+    referee_findings.md
+    form_filter_findings.md
 ```
 
 ---
 
 ## Next Steps
 
-### Immediate (this week)
-- [ ] Log Round 7 result into `bet_ledger.csv` after Saturday's game
-- [ ] Run `weekend_picks.py --bankroll 100` each Thursday for Round 8
+### This week
+- [ ] Log Round 7 result (Broncos game Sat 18 Apr) → `bet_ledger.csv`
+- [ ] Run `python src/strategy/weekend_picks.py --bankroll 100` Thursday for Round 8
 
-### Short term (next 2–3 sessions)
-- [ ] **Fix weather agent** — add rate limiting (sleep between API calls) and retry → re-run with full dataset to confirm/deny the 6.9 pt suppression effect
-- [ ] **Referee bias agent** — strongest unimplemented signal (peer-reviewed evidence); scrape NRL referee assignments, correlate with home penalty rates and outcomes
-- [ ] **Form filter overlay** — only back home at AAMI Park when Melbourne Storm also have ≥3 wins in last 5 (add confidence layer, test if improves ROI)
+### Short term
+- [ ] **Confirm weather significance** — re-run Agent 2 after NaN fix resolves; if wet games −4.8 pts is significant, use as overs/unders overlay
+- [ ] **Referee data collection** — scrape NRL.com match pages for referee assignments (2009–2026); re-run Agent 4 for full ANOVA
+- [ ] **Regenerate Word report** — update with all 5 agent findings: `python src/strategy/generate_report.py`
 
 ### Medium term
-- [ ] **CLV dashboard** — after 20+ live bets in ledger, build CLV summary report showing if strategy is capturing genuine value
-- [ ] **OddsPortal scraper** — fills 2009–2012 bookmaker odds gap (currently using 2009 from ASB manual download only)
-- [ ] **Jupyter EDA notebooks** — visual exploration of venue maps, seasonal trends, equity curves
+- [ ] **CLV dashboard** — after 20+ live bets in ledger, build summary showing avg CLV
+- [ ] **Bookmaker account strategy** — at +9% ROI, accounts will be limited; plan Betfair as primary execution venue
+- [ ] **2026 mid-season refresh** — update nrl_clean.csv, re-check venue baselines holding
 
 ### Longer term
-- [ ] **Elo rating model** — combine with venue bias as composite signal; test if consensus between Elo + venue picks improves win rate
-- [ ] **Bookmaker account management** — if ROI holds at +9%+, accounts will be limited; plan for Betfair exchange as primary execution venue
-- [ ] **2026 season monitoring** — refresh nrl_clean.csv mid-season, re-run baselines to check venue rates holding
+- [ ] Elo rating model (open source base: brandonfalconer/NRLPredictionModel)
+- [ ] OddsPortal scraper to fill any historical odds gaps
+- [ ] Jupyter EDA notebooks with venue maps and equity curves
 
 ---
 
-## Running the Project
+## How to Run
 
 ```bash
-# Generate this week's bets
+# This week's bets
 python src/strategy/weekend_picks.py --bankroll 100
 
-# Re-run full backtest
+# Full backtest
 python src/strategy/venue_bias.py
 
-# Run quick wins agents
+# Run all 5 analysis agents
 python -m src.agents.quick_wins.coordinator
 
 # Regenerate Word report
 python src/strategy/generate_report.py
 
-# Rebuild full dataset (after updating raw data)
-python src/ingestion/pipeline.py
-python src/analysis/bias_analysis.py
+# Rebuild full dataset
+python src/ingestion/pipeline.py && python src/analysis/bias_analysis.py
 ```

@@ -1,6 +1,6 @@
 # Agent 2 — Weather Overlay Findings
 
-Weather-matched matches: 1,040
+Weather-matched matches: 3,556
 
 ---
 
@@ -9,9 +9,9 @@ Weather-matched matches: 1,040
 - Direction: higher temp → fewer points
 
 ## Wet Conditions (>5mm precipitation) vs Total Score
-- Wet: 123 matches, avg score 37.0
-- Dry: 917 matches, avg score 43.9
-- Difference: -6.9 points
+- Wet: 391 matches, avg score 39.2
+- Dry: 3165 matches, avg score 44.0
+- Difference: -4.8 points
 - t=nan, p=nan — not significant
 
 ## Wind vs Total Score
@@ -19,14 +19,14 @@ Weather-matched matches: 1,040
 - Direction: more wind → fewer points
 
 ## Temperature vs Home Win Rate
-- Pearson r=0.0008, p=0.9786 — not significant
+- Pearson r=-0.0135, p=0.4212 — not significant
 
 ## Wet Conditions vs Home Win Rate
-- Wet home win rate: 63.4%  |  Dry: 58.9%
-- t=0.960, p=0.3375 — not significant
+- Wet home win rate: 57.5%  |  Dry: 56.1%
+- t=0.562, p=0.5743 — not significant
 
 ## Cold (<12°C) vs Total Score
-- Cold: 373 matches, avg 44.9  |  Warm: 667, avg 42.1
+- Cold: 639 matches, avg 45.5  |  Warm: 2917, avg 43.1
 - t=nan, p=nan — not significant
 
 ---
