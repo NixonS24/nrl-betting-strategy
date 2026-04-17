@@ -89,7 +89,7 @@ Run with: `python -m src.agents.quick_wins.coordinator`
 | # | Agent | Finding | Verdict |
 |---|---|---|---|
 | 1 | Rest & Travel Fatigue | Away short rest: +1.6% HW rate improvement (p=0.27) | Not significant — skip |
-| 2 | Weather Overlay | Wet games average **4.8 fewer points** (39.2 vs 44.0, 3,556 matches) | Not significant yet — NaN bug fix in progress |
+| 2 | **Weather Overlay** | Wet games average **4.8 fewer points** (t=−6.79, p<0.0001). Cold games +2.4 pts. No effect on HW rate. | **Confirmed — use for overs/unders, not win/loss** |
 | 3 | **CLV Tracker** | Home odds shortening → **63% win rate** vs 48% when drifting (p<0.0001) | **Integrated — bet early in week** |
 | 4 | Referee Bias | Home advantage declining −0.19%/yr (**p=0.015**); full ref data needed | **Partial — collect ref assignments** |
 | 5 | Form Filter | 3/5 threshold: ROI 9.20% (−0.12%). 4/5: ROI −2.45%. No improvement. | Not integrated — venue signal standalone |
@@ -97,7 +97,7 @@ Run with: `python -m src.agents.quick_wins.coordinator`
 ### Key Insights
 - **Bet early in the week** — when home odds shorten, team wins 63% of the time (CLV signal)
 - **Home advantage is declining** — ~0.19%/yr over 27 seasons; re-check venue baselines annually
-- **Weather suppresses scoring** — wet conditions cut average score by 4.8 pts; confirm with full stats then use for overs/unders
+- **Weather suppresses scoring** — wet conditions cut average score by **4.8 pts** (p<0.0001, confirmed); cold games add 2.4 pts. Use for overs/unders markets alongside win/loss bets
 - **Form filter hurts** — adding form requirement reduces sample size without improving ROI
 
 ---
@@ -162,7 +162,7 @@ data/processed/
 - [ ] Run `python src/strategy/weekend_picks.py --bankroll 100` Thursday for Round 8
 
 ### Short term
-- [ ] **Confirm weather significance** — re-run Agent 2 after NaN fix resolves; if wet games −4.8 pts is significant, use as overs/unders overlay
+- [ ] **Add weather to weekend_picks.py** — fetch precipitation forecast for qualifying venue, flag overs/unders opportunity when wet predicted
 - [ ] **Referee data collection** — scrape NRL.com match pages for referee assignments (2009–2026); re-run Agent 4 for full ANOVA
 - [ ] **Regenerate Word report** — update with all 5 agent findings: `python src/strategy/generate_report.py`
 
