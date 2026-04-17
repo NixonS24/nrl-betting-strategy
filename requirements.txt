@@ -1,0 +1,10 @@
+pandas
+numpy
+scipy
+statsmodels
+openpyxl
+jupyterlab
+matplotlib
+seaborn
+claude-agent-sdk
+anyio

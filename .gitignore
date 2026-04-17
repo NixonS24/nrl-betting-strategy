@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb~
+
+# Data — exclude large/sensitive raw files; keep processed outputs
+data/raw/nrl.xlsx
+data/raw/nrlmanualdownlaod.xlsx
+data/raw/nrl_new.xlsx
+data/raw/nrl_ua.xlsx
+
+# Keep the fetched CSVs (small, reproducible)
+!data/raw/uselessnrlstats/
+!data/raw/betfair/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+*.pem
+*.key
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Logs
+*.log
+logs/
