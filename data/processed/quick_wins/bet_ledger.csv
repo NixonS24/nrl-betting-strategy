@@ -1,1 +1,2 @@
 bet_id,bet_date,match_date,round,home_team,away_team,venue,bet_type,team_backed,odds_obtained,closing_odds,bf_closing_odds,result,won,stake,profit,clv,clv_pct,strategy,notes
+1,2026-04-17,2026-04-18,7,Wests Tigers,Brisbane Broncos,Campbelltown Sports Stadium,fade_home,Brisbane Broncos,2.45,,,$2.45,away_win,True,8.99,13.04,,venue_bias,Broncos won 21-20. Strategy: fade home at Campbelltown (37.9% base HW rate).

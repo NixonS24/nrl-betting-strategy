@@ -83,6 +83,7 @@ def run_agents() -> dict:
         ("clv_tracker",  clv_tracker,  "Agent 3: CLV Tracker"),
         ("referee_bias", referee_bias, "Agent 4: Referee Bias"),
         ("form_filter",  form_filter,  "Agent 5: Form Filter Overlay"),
+        ("injury_bias",  injury_bias,  "Agent 6: Injury Mispricing"),
     ]:
         try:
             print(f"\n{'─'*62}\n  Running {label}...")
@@ -139,6 +140,7 @@ def write_coordinator_report(results: dict, integrated: list[str]) -> str:
         ("clv_tracker",  "CLV Tracker"),
         ("referee_bias", "Referee Bias"),
         ("form_filter",  "Form Filter Overlay"),
+        ("injury_bias",  "Injury Mispricing"),
     ]:
         r = results.get(key, {})
         sig  = "Yes" if r.get("significant") else "No"
@@ -180,7 +182,7 @@ def main():
     print("  INTEGRATION DECISION")
     print("=" * 62)
 
-    for key in ["rest_fatigue", "weather", "clv_tracker", "referee_bias", "form_filter"]:
+    for key in ["rest_fatigue", "weather", "clv_tracker", "referee_bias", "form_filter", "injury_bias"]:
         r = results.get(key, {})
         sig = r.get("significant", False)
         label = key.replace("_", " ").title()

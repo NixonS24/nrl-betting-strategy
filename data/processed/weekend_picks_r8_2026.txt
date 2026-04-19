@@ -1,0 +1,45 @@
+==============================================================
+  NRL WEEKEND BETTING CARD
+  Generated: 19 April 2026, 01:29 PM
+  Round: 8  |  Bankroll: $113.04  |  ¼ Kelly staking
+==============================================================
+
+STRATEGY RULES
+--------------------------------------------------------------
+  Back home at venues with elevated historical HW rate when
+  bookmaker odds imply prob < (venue base rate − 5%).
+  Fade home at venues where home team chronically underperforms.
+  Min edge: 5%  |  Odds: $1.5–$6.0  |  Stake: ¼ Kelly
+
+WEATHER KEY
+--------------------------------------------------------------
+  Wet (>5mm) suppresses total score by ~5.6 pts (p=0.0001).
+  Consider backing UNDERS on total points line in wet games.
+
+ROUND 8 FIXTURES — STRATEGY SCAN
+--------------------------------------------------------------
+  Match                                    Venue                        Weather        Status
+  ---------------------------------------- ---------------------------- -------------- ----------------
+  Wests Tigers vs Canberra Raiders         Leichhardt Oval              0.0mm dry      no action
+  North Queensland Cowboys vs Cronulla Sutherland Sharks Queensland Country Bank Stadium 0.0mm dry      no action
+  Brisbane Broncos vs Canterbury Bankstown Bulldogs Suncorp Stadium              0.0mm dry      no action
+  St George Illawarra Dragons vs Sydney Roosters Allianz Stadium              0.0mm dry      no action
+  New Zealand Warriors vs Dolphins         Go Media Stadium             0.0mm dry      no action
+  Melbourne Storm vs South Sydney Rabbitohs AAMI Park                    0.0mm dry      strat venue (edge -7.3%)
+  Newcastle Knights vs Penrith Panthers    McDonald Jones Stadium       0.0mm dry      no action
+  Manly Warringah Sea Eagles vs Parramatta Eels 4 Pines Park                 0.0mm dry      no action
+
+NO QUALIFYING BETS THIS ROUND
+--------------------------------------------------------------
+  No fixtures at strategy venues with sufficient edge.
+
+STRATEGY VENUE NOTES
+--------------------------------------------------------------
+  Melbourne Storm (home) at AAMI Park: edge -7.3% — need >5%
+
+==============================================================
+DISCLAIMER
+--------------------------------------------------------------
+  Statistical model only. Bet responsibly.
+  National Gambling Helpline: 1800 858 858.
+==============================================================

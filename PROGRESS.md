@@ -93,10 +93,13 @@ Run with: `python -m src.agents.quick_wins.coordinator`
 | 3 | **CLV Tracker** | Home odds shortening → **63% win rate** vs 48% when drifting (p<0.0001) | **Integrated — bet early in week** |
 | 4 | Referee Bias | Home advantage declining −0.19%/yr (**p=0.015**); full ref data needed | **Partial — collect ref assignments** |
 | 5 | Form Filter | 3/5 threshold: ROI 9.20% (−0.12%). 4/5: ROI −2.45%. No improvement. | Not integrated — venue signal standalone |
+| 6 | **Injury Mispricing** | Home odds drift >10% → HW rate drops to **36.3%** vs 60.5% baseline (p<0.0001). 45–55% bucket: market underestimates home by +11.9%. | **Partial — NRL team list data needed for salary-weighted injury score** |
 
 ### Key Insights
 - **Bet early in the week** — when home odds shorten, team wins 63% of the time (CLV signal)
 - **Home advantage is declining** — ~0.19%/yr over 27 seasons; re-check venue baselines annually
+- **Injury/team news is priced directionally correctly** — home odds drifting >10% → home wins only 36.3% vs 60.5% normal (p<0.0001). Market direction right but magnitude may be off
+- **Calibration error at 50/50** — when Betfair prices home at 45–55%, they win 62.5% (+11.9% error). Back home teams priced as genuine coin-flips at strategy venues
 - **Weather suppresses scoring** — wet conditions cut average score by **4.8 pts** (p<0.0001, confirmed); cold games add 2.4 pts. Use for overs/unders markets alongside win/loss bets
 - **Form filter hurts** — adding form requirement reduces sample size without improving ROI
 
@@ -162,9 +165,11 @@ data/processed/
 - [ ] Run `python src/strategy/weekend_picks.py --bankroll 100` Thursday for Round 8
 
 ### Short term
-- [ ] **Add weather to weekend_picks.py** — fetch precipitation forecast for qualifying venue, flag overs/unders opportunity when wet predicted
+- [x] **Weather added to weekend_picks.py** — live rain forecast now auto-fetched for all venues; wet flag triggers overs/unders note
+- [ ] **Scrape NRL team lists** — use FootyWire or SuperCoach pricing as salary cap proxy; build `injury_score` per match and re-run Agent 6 with real position data
+- [ ] **Calibration edge test** — 45–55% Betfair home bucket wins 62.5% (vs 50.5% implied); backtest backing home teams at strategy venues in this range
 - [ ] **Referee data collection** — scrape NRL.com match pages for referee assignments (2009–2026); re-run Agent 4 for full ANOVA
-- [ ] **Regenerate Word report** — update with all 5 agent findings: `python src/strategy/generate_report.py`
+- [ ] **Regenerate Word report** — update with all 6 agent findings: `python src/strategy/generate_report.py`
 
 ### Medium term
 - [ ] **CLV dashboard** — after 20+ live bets in ledger, build summary showing avg CLV
