@@ -1,0 +1,165 @@
+{
+  "hypothesis_id": "H_006",
+  "p_value": 1.0,
+  "sample_size": 92,
+  "roi_impact": 0.285,
+  "is_significant": false,
+  "method": "Disagreement buckets (bk_implied_home \u2212 bf_implied_home vs threshold) at strategy venues; one-sample t-test on (home_win \u2212 bk_implied_home) per bucket; holdout backtest with four filter variants",
+  "data_window": "Dual-odds window: 2021\u20132025. Training: 2021\u20132022. Holdout: 2023+.",
+  "backtest_type": "holdout",
+  "discord_threshold": 0.03,
+  "coverage": {
+    "total_matches": 5435,
+    "dual_odds_matches": 361,
+    "strategy_venue_matches": 92
+  },
+  "training_buckets": [
+    {
+      "window": "Training (pre-2023)",
+      "venue_type": "back_home",
+      "direction": "agree",
+      "n": 25,
+      "actual_hw": 0.84,
+      "implied_bk": 0.8332,
+      "implied_bf": 0.828,
+      "calibration_error_bk": 0.0068,
+      "p_one_sided": 0.4628,
+      "significant": false
+    },
+    {
+      "window": "Training (pre-2023)",
+      "venue_type": "back_home",
+      "direction": "bk_bullish_home",
+      "n": 7,
+      "actual_hw": 0.8571,
+      "implied_bk": 0.7419,
+      "implied_bf": 0.7011,
+      "calibration_error_bk": 0.1153,
+      "p_one_sided": 0.2084,
+      "significant": false
+    },
+    {
+      "window": "Training (pre-2023)",
+      "venue_type": "fade_home",
+      "direction": "agree",
+      "n": 4,
+      "actual_hw": 0.0,
+      "implied_bk": 0.4831,
+      "implied_bf": 0.4751,
+      "calibration_error_bk": -0.4831,
+      "p_one_sided": 1.0,
+      "significant": false
+    },
+    {
+      "window": "Training (pre-2023)",
+      "venue_type": "fade_home",
+      "direction": "bk_bullish_home",
+      "n": 1,
+      "actual_hw": 0.0,
+      "implied_bk": 0.2506,
+      "implied_bf": 0.2083,
+      "calibration_error_bk": -0.2506,
+      "p_one_sided": 1.0,
+      "significant": false
+    }
+  ],
+  "holdout_buckets": [
+    {
+      "window": "Holdout (2023+)",
+      "venue_type": "back_home",
+      "direction": "agree",
+      "n": 38,
+      "actual_hw": 0.8947,
+      "implied_bk": 0.7581,
+      "implied_bf": 0.7501,
+      "calibration_error_bk": 0.1366,
+      "p_one_sided": 0.0066,
+      "significant": true
+    },
+    {
+      "window": "Holdout (2023+)",
+      "venue_type": "back_home",
+      "direction": "bk_bullish_home",
+      "n": 8,
+      "actual_hw": 0.75,
+      "implied_bk": 0.8127,
+      "implied_bf": 0.6842,
+      "calibration_error_bk": -0.0627,
+      "p_one_sided": 0.6331,
+      "significant": false
+    },
+    {
+      "window": "Holdout (2023+)",
+      "venue_type": "fade_home",
+      "direction": "agree",
+      "n": 5,
+      "actual_hw": 0.0,
+      "implied_bk": 0.3428,
+      "implied_bf": 0.3358,
+      "calibration_error_bk": -0.3428,
+      "p_one_sided": 0.0018,
+      "significant": true
+    },
+    {
+      "window": "Holdout (2023+)",
+      "venue_type": "fade_home",
+      "direction": "bk_bullish_home",
+      "n": 3,
+      "actual_hw": 0.3333,
+      "implied_bk": 0.4734,
+      "implied_bf": 0.428,
+      "calibration_error_bk": -0.14,
+      "p_one_sided": 1.0,
+      "significant": false
+    },
+    {
+      "window": "Holdout (2023+)",
+      "venue_type": "fade_home",
+      "direction": "exchange_bullish_home",
+      "n": 1,
+      "actual_hw": 1.0,
+      "implied_bk": 0.3497,
+      "implied_bf": 0.3817,
+      "calibration_error_bk": 0.6503,
+      "p_one_sided": 1.0,
+      "significant": false
+    }
+  ],
+  "holdout_backtest_variants": {
+    "No filter (baseline)": {
+      "n": 7,
+      "wins": 6,
+      "win_rate": 0.8571,
+      "profit": 497.0,
+      "roi": 0.71,
+      "is_exploratory": true
+    },
+    "Exchange confirms home edge": {
+      "n": 0,
+      "wins": 0,
+      "win_rate": 0.0,
+      "profit": 0.0,
+      "roi": 0.0,
+      "is_exploratory": true
+    },
+    "Bookmaker bullish (exchange sceptical)": {
+      "n": 1,
+      "wins": 0,
+      "win_rate": 0.0,
+      "profit": -100.0,
+      "roi": -1.0,
+      "is_exploratory": true
+    },
+    "Markets agree": {
+      "n": 6,
+      "wins": 6,
+      "win_rate": 1.0,
+      "profit": 597.0,
+      "roi": 0.995,
+      "is_exploratory": true
+    }
+  },
+  "best_variant": "Markets agree",
+  "best_variant_signal": "none",
+  "summary": "Disagreement filter does NOT show a significant improvement over the base venue-bias strategy in holdout data (primary bucket p=1.000). Best variant: 'Markets agree' (ROI=99.50%, n=6, exploratory=True). ROI delta vs no-filter baseline: +28.50%."
+}
