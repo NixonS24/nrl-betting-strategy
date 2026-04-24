@@ -1,0 +1,92 @@
+{
+  "hypothesis_id": "H_008",
+  "p_value": 0.2102,
+  "sample_size": 655,
+  "roi_impact": 0.0402,
+  "is_significant": false,
+  "method": "Overround tertile bucketing + calibration t-test + backtest segmenting",
+  "data_window": "Train: pre-2022, Test: 2022-2025",
+  "backtest_type": "holdout",
+  "training_results": [
+    {
+      "bucket": "low",
+      "n": 770,
+      "avg_overround": 1.0357,
+      "actual_hw": 0.5351,
+      "implied_hw": 0.5496,
+      "calibration_error": -0.0145,
+      "p_value": 0.4027,
+      "significant": false
+    },
+    {
+      "bucket": "med",
+      "n": 835,
+      "avg_overround": 1.0461,
+      "actual_hw": 0.5665,
+      "implied_hw": 0.5806,
+      "calibration_error": -0.0141,
+      "p_value": 0.3681,
+      "significant": false
+    },
+    {
+      "bucket": "high",
+      "n": 968,
+      "avg_overround": 1.0559,
+      "actual_hw": 0.5961,
+      "implied_hw": 0.6144,
+      "calibration_error": -0.0184,
+      "p_value": 0.2102,
+      "significant": false
+    }
+  ],
+  "test_results": [
+    {
+      "bucket": "low",
+      "n": 308,
+      "avg_overround": 1.0307,
+      "actual_hw": 0.5552,
+      "implied_hw": 0.5566,
+      "calibration_error": -0.0014,
+      "p_value": 0.9596,
+      "significant": false
+    },
+    {
+      "bucket": "med",
+      "n": 239,
+      "avg_overround": 1.0452,
+      "actual_hw": 0.5732,
+      "implied_hw": 0.5782,
+      "calibration_error": -0.005,
+      "p_value": 0.8619,
+      "significant": false
+    },
+    {
+      "bucket": "high",
+      "n": 108,
+      "avg_overround": 1.0552,
+      "actual_hw": 0.5926,
+      "implied_hw": 0.6351,
+      "calibration_error": -0.0425,
+      "p_value": 0.2572,
+      "significant": false
+    }
+  ],
+  "backtest_results": [
+    {
+      "bucket": "low",
+      "n": 40,
+      "roi": 0.0352
+    },
+    {
+      "bucket": "med",
+      "n": 28,
+      "roi": -0.1561
+    },
+    {
+      "bucket": "high",
+      "n": 18,
+      "roi": -0.005
+    }
+  ],
+  "summary": "Margin intensity does NOT show significant calibration differences. Low overround ROI: 3.52% vs High overround ROI: -0.50%. Primary training p-value: 0.210."
+}
