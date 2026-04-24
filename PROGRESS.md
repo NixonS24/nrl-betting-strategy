@@ -1,6 +1,6 @@
 # Project Progress
 
-## Status: Live — Venue Bias strategy operational, Round 7 won (+$4.05), R8 no bet
+## Status: Live — Venue Bias strategy operational; tri-model research pipeline active (Session 6)
 
 **Repo:** https://github.com/NixonS24/nrl-betting-strategy  
 **Last updated:** 17 April 2026 (Session 5)
@@ -17,6 +17,20 @@ Live from Round 7 2026. Five analysis agents built and run.
 ---
 
 ## Sessions Completed
+
+### Session 6 — 2026-04-24 (Tri-Model Pipeline: Architect Turn)
+
+- [x] Tri-model research pipeline formalised: OpenAI (Ideator) → Claude (Architect) → Gemini (Verifier)
+- [x] Agreed to `PROPOSAL_FOR_CLAUDE.md`; `RESPONSE_FROM_CLAUDE.md` updated with feedback and schema additions (`method`, `data_window`, `backtest_type` fields)
+- [x] Wrote `H_001_analysis.py` — venue baseline recalibration (holdout: pre-2022 train, 2022+ test)
+- [x] Wrote `H_002_analysis.py` — Suncorp Stadium fade home (holdout design, one-sided t-test)
+- [x] Gemini ran H_001 + H_002; analysed R_001.json and R_002.json
+- [x] **H_001 result:** Blanket recalibration REJECTED (ROI delta −12%). BlueBet Stadium edge CONFIRMED (p=0.0001, +27pp shift post-2019) — promoted to BACK HOME strategy venue
+- [x] **H_002 result:** Suncorp fade NOT significant (p=0.071, n=24 holdout bets). Marked EXPLORATORY — do not trade
+- [x] Wrote `H_004_analysis.py` — AAMI Park decomposition: venue effect vs Melbourne Storm team effect (composition + holdout backtest, auto-classifies if Storm >90% of matches)
+- [x] Wrote `H_006_analysis.py` — BK/Betfair disagreement filter layered on venue strategy (four variants, exploratory-flagged if n<30 in holdout)
+- [ ] H_004 pending Gemini run (`python3 research/scripts/H_004_analysis.py`)
+- [ ] H_006 pending Gemini run (`python3 research/scripts/H_006_analysis.py`)
 
 ### Session 1 — 2026-04-14
 - [x] Project structure, four-agent pipeline, Python 3.11 + dependencies
@@ -174,6 +188,28 @@ data/processed/
 
 ---
 
+## Research Pipeline (Tri-Model)
+
+```
+research/
+  hypotheses/
+    H_001.md   — Updated venue baselines (2019+)         [DONE — REJECTED globally, BlueBet CONFIRMED]
+    H_002.md   — Suncorp Stadium fade home                [DONE — EXPLORATORY, p=0.071]
+    H_004.md   — AAMI Park venue vs Storm team effect     [Script written, pending Gemini run]
+    H_006.md   — BK/Exchange disagreement filter          [Script written, pending Gemini run]
+  scripts/
+    H_001_analysis.py  — holdout backtest, z-test per venue
+    H_002_analysis.py  — one-sided t-test, holdout backtest
+    H_004_analysis.py  — composition analysis + holdout backtest
+    H_006_analysis.py  — disagreement bucket analysis + 4 filter variants
+  results/
+    R_001.json  — H_001 result (is_significant: false; BlueBet p=0.0001)
+    R_002.json  — H_002 result (is_significant: false; exploratory)
+  visuals/
+    H_001_plot.png
+    H_002_plot.png
+```
+
 ## Next Steps
 
 ### This week
@@ -186,7 +222,11 @@ data/processed/
 - [x] **Real NRL team list scraper built** — NRL.com HTML parser extracts 1-17+bench from any completed match; `score_upcoming_round()` for Thursday lineup scoring
 - [x] **SuperCoach player values scraped** — 548 players with 2026 SC prices as salary cap proxy
 - [x] **Lineup delta tested** — NOT predictive (p=0.73, n=64 matches); confirms line movement is the right signal
-- [ ] **Calibration edge test** — 45–55% Betfair home bucket wins 62.5% (vs 50.5% implied); backtest backing home teams at strategy venues in this range
+- [x] **Calibration edge test** — 45–55% Betfair home bucket wins 62.5% (vs 50.5% implied). **REJECTED** (p=0.18, n=32). Signal is small-sample noise. (2026-04-24)
+- [x] **H_001: Venue Baseline Recalibration** — Modern (2019+) baselines underperform all-time on 2022+ holdout (ROI delta -12%). **REJECTED Global**, but **BlueBet Stadium confirmed** as BACK HOME venue (p=0.0001). (2026-04-24)
+- [x] **H_002: Suncorp Stadium Fade** — Fade home ROI +75% in holdout, but p=0.071 (one-sided). **NEEDS DATA** — keep as exploratory signal. (2026-04-24)
+- [x] **H_004: AAMI Park Decomposition** — Venue is 100% Melbourne Storm home games. **RE-CLASSIFIED** as Team-Linked Venue Edge. (2026-04-24)
+- [x] **H_006: BK/BF Disagreement Filter** — Markets-Agree filter shows +28% ROI delta, but n=6 in holdout. **EXPLORATORY**. (2026-04-24)
 - [ ] **Referee data collection** — scrape NRL.com match pages for referee assignments (2009–2026); re-run Agent 4 for full ANOVA
 - [ ] **Regenerate Word report** — update with all 6 agent findings: `python src/strategy/generate_report.py`
 
