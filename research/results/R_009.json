@@ -1,0 +1,105 @@
+{
+  "hypothesis_id": "H_009",
+  "p_value": 0.0764,
+  "sample_size": 655,
+  "roi_impact": 0.0,
+  "is_significant": false,
+  "method": "Odds-based bucketing + calibration t-test",
+  "data_window": "Train: pre-2022, Test: 2022-2025",
+  "backtest_type": "holdout",
+  "training_results": [
+    {
+      "bucket": "heavy_fav",
+      "n": 686,
+      "actual_hw": 0.7741,
+      "implied_hw": 0.798,
+      "calibration_error": -0.024,
+      "p_value": 0.1312,
+      "significant": false
+    },
+    {
+      "bucket": "fav",
+      "n": 934,
+      "actual_hw": 0.6231,
+      "implied_hw": 0.6291,
+      "calibration_error": -0.0059,
+      "p_value": 0.7074,
+      "significant": false
+    },
+    {
+      "bucket": "near_flip",
+      "n": 491,
+      "actual_hw": 0.4175,
+      "implied_hw": 0.4569,
+      "calibration_error": -0.0394,
+      "p_value": 0.0764,
+      "significant": false
+    },
+    {
+      "bucket": "underdog",
+      "n": 372,
+      "actual_hw": 0.3548,
+      "implied_hw": 0.3417,
+      "calibration_error": 0.0131,
+      "p_value": 0.5971,
+      "significant": false
+    },
+    {
+      "bucket": "heavy_underdog",
+      "n": 90,
+      "actual_hw": 0.1333,
+      "implied_hw": 0.1811,
+      "calibration_error": -0.0478,
+      "p_value": 0.1758,
+      "significant": false
+    }
+  ],
+  "test_results": [
+    {
+      "bucket": "heavy_fav",
+      "n": 203,
+      "actual_hw": 0.7882,
+      "implied_hw": 0.8206,
+      "calibration_error": -0.0324,
+      "p_value": 0.2693,
+      "significant": false
+    },
+    {
+      "bucket": "fav",
+      "n": 195,
+      "actual_hw": 0.6103,
+      "implied_hw": 0.6298,
+      "calibration_error": -0.0196,
+      "p_value": 0.5765,
+      "significant": false
+    },
+    {
+      "bucket": "near_flip",
+      "n": 94,
+      "actual_hw": 0.5532,
+      "implied_hw": 0.4557,
+      "calibration_error": 0.0975,
+      "p_value": 0.0599,
+      "significant": false
+    },
+    {
+      "bucket": "underdog",
+      "n": 110,
+      "actual_hw": 0.2818,
+      "implied_hw": 0.3282,
+      "calibration_error": -0.0463,
+      "p_value": 0.2794,
+      "significant": false
+    },
+    {
+      "bucket": "heavy_underdog",
+      "n": 53,
+      "actual_hw": 0.1887,
+      "implied_hw": 0.1868,
+      "calibration_error": 0.0019,
+      "p_value": 0.9723,
+      "significant": false
+    }
+  ],
+  "summary": "Market calibration does NOT show significant asymmetry. Primary training p-value: 0.076."
+}
