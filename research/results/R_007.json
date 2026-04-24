@@ -1,0 +1,112 @@
+{
+  "hypothesis_id": "H_007",
+  "p_value": 0.0786,
+  "sample_size": 655,
+  "roi_impact": -0.0461,
+  "is_significant": false,
+  "method": "One-sample t-test on residuals by CLM bucket + holdout backtest filter",
+  "data_window": "Train: pre-2022, Test: 2022-2025",
+  "backtest_type": "holdout",
+  "training_results": [
+    {
+      "bucket": "drifted_mild",
+      "n": 268,
+      "actual_hw": 0.5634,
+      "implied_hw": 0.5714,
+      "calibration_error": -0.008,
+      "p_value": 0.7822,
+      "significant": false
+    },
+    {
+      "bucket": "drifted_strong",
+      "n": 408,
+      "actual_hw": 0.3897,
+      "implied_hw": 0.4301,
+      "calibration_error": -0.0404,
+      "p_value": 0.0786,
+      "significant": false
+    },
+    {
+      "bucket": "shortened_mild",
+      "n": 440,
+      "actual_hw": 0.6682,
+      "implied_hw": 0.6696,
+      "calibration_error": -0.0014,
+      "p_value": 0.9455,
+      "significant": false
+    },
+    {
+      "bucket": "shortened_strong",
+      "n": 452,
+      "actual_hw": 0.5796,
+      "implied_hw": 0.6097,
+      "calibration_error": -0.03,
+      "p_value": 0.1723,
+      "significant": false
+    },
+    {
+      "bucket": "stable",
+      "n": 205,
+      "actual_hw": 0.6146,
+      "implied_hw": 0.6333,
+      "calibration_error": -0.0186,
+      "p_value": 0.5516,
+      "significant": false
+    }
+  ],
+  "test_results": [
+    {
+      "bucket": "drifted_mild",
+      "n": 69,
+      "actual_hw": 0.5942,
+      "implied_hw": 0.5842,
+      "calibration_error": 0.01,
+      "p_value": 0.8609,
+      "significant": false
+    },
+    {
+      "bucket": "drifted_strong",
+      "n": 241,
+      "actual_hw": 0.4232,
+      "implied_hw": 0.4109,
+      "calibration_error": 0.0123,
+      "p_value": 0.6681,
+      "significant": false
+    },
+    {
+      "bucket": "shortened_mild",
+      "n": 94,
+      "actual_hw": 0.6809,
+      "implied_hw": 0.7161,
+      "calibration_error": -0.0352,
+      "p_value": 0.4543,
+      "significant": false
+    },
+    {
+      "bucket": "shortened_strong",
+      "n": 208,
+      "actual_hw": 0.6683,
+      "implied_hw": 0.6809,
+      "calibration_error": -0.0126,
+      "p_value": 0.6876,
+      "significant": false
+    },
+    {
+      "bucket": "stable",
+      "n": 43,
+      "actual_hw": 0.6047,
+      "implied_hw": 0.6963,
+      "calibration_error": -0.0916,
+      "p_value": 0.2371,
+      "significant": false
+    }
+  ],
+  "backtest": {
+    "n_baseline": 86,
+    "baseline_roi": -0.0355,
+    "n_filtered": 64,
+    "filtered_roi": -0.0816,
+    "roi_delta": -0.0461
+  },
+  "summary": "Line movement does NOT show significant predictive power. Excluding strong drifts improved holdout ROI by -4.61%. Strongest training p-value: 0.079."
+}
