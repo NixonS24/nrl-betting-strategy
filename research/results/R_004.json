@@ -1,0 +1,108 @@
+{
+  "hypothesis_id": "H_004",
+  "p_value": 0.295,
+  "sample_size": 171,
+  "roi_impact": 0.6917,
+  "is_significant": false,
+  "method": "Composition analysis (% Storm home) + one-sample t-test on (home_win \u2212 bk_implied_home) residuals, one-sided (actual > implied), separately for Storm home matches and other teams",
+  "data_window": "Signal: pre-2022. Backtest: 2022\u20132025.",
+  "backtest_type": "holdout",
+  "composition": {
+    "total_aami_matches": 171,
+    "storm_matches": 171,
+    "storm_pct": 1.0,
+    "is_effectively_storm_only": true,
+    "by_team": [
+      {
+        "home_team": "Melbourne Storm",
+        "n": 171,
+        "hw_rate": 0.7602339181286549
+      }
+    ],
+    "by_era": [
+      {
+        "era": "2019+",
+        "home_team": "Melbourne Storm",
+        "n": 57
+      },
+      {
+        "era": "pre-2019",
+        "home_team": "Melbourne Storm",
+        "n": 114
+      }
+    ]
+  },
+  "classification": "team_linked_venue_edge",
+  "classification_note": "AAMI Park is 100.0% Melbourne Storm home games. The edge cannot be separated from Storm's home-team performance. Recommend reframing as 'Melbourne Storm home edge' rather than 'AAMI Park venue edge'.",
+  "training_signal": {
+    "storm_home": {
+      "name": "Storm home at AAMI (pre-2022)",
+      "n": 134,
+      "actual_hw_rate": 0.7463,
+      "mean_implied_hw": 0.7267,
+      "calibration_error": 0.0196,
+      "t_stat": 0.54,
+      "p_value_one_sided": 0.295,
+      "p_value_two_sided": 0.5901,
+      "significant": false
+    },
+    "other_home": {
+      "name": "Other teams at AAMI (pre-2022)",
+      "n": 0
+    },
+    "combined": {
+      "name": "All AAMI (pre-2022)",
+      "n": 134,
+      "actual_hw_rate": 0.7463,
+      "mean_implied_hw": 0.7267,
+      "calibration_error": 0.0196,
+      "t_stat": 0.54,
+      "p_value_one_sided": 0.295,
+      "p_value_two_sided": 0.5901,
+      "significant": false
+    }
+  },
+  "holdout_signal": {
+    "storm_home": {
+      "name": "Storm home at AAMI (2022+)",
+      "n": 37,
+      "actual_hw_rate": 0.8108,
+      "mean_implied_hw": 0.7661,
+      "calibration_error": 0.0447,
+      "t_stat": 0.6631,
+      "p_value_one_sided": 0.2557,
+      "p_value_two_sided": 0.5115,
+      "significant": false
+    },
+    "other_home": {
+      "name": "Other teams at AAMI (2022+)",
+      "n": 0
+    },
+    "combined": {
+      "name": "All AAMI (2022+)",
+      "n": 37,
+      "actual_hw_rate": 0.8108,
+      "mean_implied_hw": 0.7661,
+      "calibration_error": 0.0447,
+      "t_stat": 0.6631,
+      "p_value_one_sided": 0.2557,
+      "p_value_two_sided": 0.5115,
+      "significant": false
+    }
+  },
+  "holdout_backtest_all_aami": {
+    "n": 6,
+    "wins": 5,
+    "win_rate": 0.8333,
+    "profit": 415.0,
+    "roi": 0.6917
+  },
+  "holdout_backtest_storm_only": {
+    "n": 6,
+    "wins": 5,
+    "win_rate": 0.8333,
+    "profit": 415.0,
+    "roi": 0.6917
+  },
+  "summary": "AAMI Park is 100.0% Melbourne Storm home games. Classification: team_linked_venue_edge. Storm home training signal: p=0.295 (not significant). Holdout ROI (Storm only): 69.17% over 6 bets."
+}
