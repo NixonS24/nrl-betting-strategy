@@ -1,0 +1,117 @@
+{
+  "hypothesis_id": "H_003",
+  "p_value": 0.1837738398383306,
+  "sample_size": 258,
+  "roi_impact": 0.0,
+  "is_significant": false,
+  "method": "ANOVA on HW rate by day-of-week and individual referee",
+  "data_window": "2021-2025 scraped sample",
+  "backtest_type": "in-sample",
+  "dow_stats": [
+    {
+      "day_of_week": "Friday",
+      "n": 60,
+      "actual_hw": 0.5833333333333334,
+      "implied_hw": 0.5482017001660064,
+      "calibration_error": 0.035131633167326926
+    },
+    {
+      "day_of_week": "Monday",
+      "n": 4,
+      "actual_hw": 0.25,
+      "implied_hw": 0.2219892276998179,
+      "calibration_error": 0.02801077230018209
+    },
+    {
+      "day_of_week": "Saturday",
+      "n": 96,
+      "actual_hw": 0.6041666666666666,
+      "implied_hw": 0.5787309216918437,
+      "calibration_error": 0.025435744974822927
+    },
+    {
+      "day_of_week": "Sunday",
+      "n": 70,
+      "actual_hw": 0.44285714285714284,
+      "implied_hw": 0.5331747224109886,
+      "calibration_error": -0.09031757955384578
+    },
+    {
+      "day_of_week": "Thursday",
+      "n": 28,
+      "actual_hw": 0.5,
+      "implied_hw": 0.5336950885708068,
+      "calibration_error": -0.03369508857080683
+    }
+  ],
+  "ref_stats": [
+    {
+      "referee": "Ashley Klein",
+      "n": 27,
+      "actual_hw": 0.6296296296296297,
+      "implied_hw": 0.533451899495789,
+      "calibration_error": 0.09617773013384068
+    },
+    {
+      "referee": "Gerard Sutton",
+      "n": 27,
+      "actual_hw": 0.6296296296296297,
+      "implied_hw": 0.6002375603993149,
+      "calibration_error": 0.029392069230314788
+    },
+    {
+      "referee": "Chris Sutton",
+      "n": 27,
+      "actual_hw": 0.5925925925925926,
+      "implied_hw": 0.5699413275233864,
+      "calibration_error": 0.022651265069206117
+    },
+    {
+      "referee": "Matt Cecchin",
+      "n": 21,
+      "actual_hw": 0.5714285714285714,
+      "implied_hw": 0.5690528444863008,
+      "calibration_error": 0.0023757269422706173
+    },
+    {
+      "referee": "Ben Cummins",
+      "n": 27,
+      "actual_hw": 0.5555555555555556,
+      "implied_hw": 0.5400346737637515,
+      "calibration_error": 0.015520881791804109
+    },
+    {
+      "referee": "Grant Atkins",
+      "n": 38,
+      "actual_hw": 0.5526315789473685,
+      "implied_hw": 0.5282064508257843,
+      "calibration_error": 0.02442512812158415
+    },
+    {
+      "referee": "Chris Butler",
+      "n": 19,
+      "actual_hw": 0.5263157894736842,
+      "implied_hw": 0.5463877070170273,
+      "calibration_error": -0.020071917543343143
+    },
+    {
+      "referee": "Adam Gee",
+      "n": 33,
+      "actual_hw": 0.42424242424242425,
+      "implied_hw": 0.516136563751011,
+      "calibration_error": -0.09189413950858677
+    },
+    {
+      "referee": "Peter Gough",
+      "n": 22,
+      "actual_hw": 0.4090909090909091,
+      "implied_hw": 0.4992839691702951,
+      "calibration_error": -0.09019306007938599
+    }
+  ],
+  "anova": {
+    "p_dow": 0.1837738398383306,
+    "p_ref": 0.7126973797022924
+  },
+  "summary": "Referee analysis (n=258) shows Day-of-Week significance: p=0.184, Referee significance: p=0.713."
+}
