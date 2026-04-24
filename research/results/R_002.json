@@ -1,0 +1,134 @@
+{
+  "hypothesis_id": "H_002",
+  "p_value": 0.0709,
+  "sample_size": 76,
+  "roi_impact": 0.7554,
+  "is_significant": false,
+  "method": "One-sample t-test on (home_win \u2212 bk_implied_home) residuals, one-sided (actual < implied)",
+  "data_window": "Signal: pre-2022. Backtest: 2022\u20132025.",
+  "backtest_type": "holdout",
+  "training_signal": {
+    "n": 214,
+    "actual_hw_rate": 0.5935,
+    "implied_hw": 0.5905,
+    "calibration_error": 0.0029,
+    "p_one_sided": 0.5377,
+    "significant": false
+  },
+  "holdout_signal": {
+    "n": 76,
+    "actual_hw_rate": 0.4474,
+    "implied_hw": 0.5328,
+    "calibration_error": -0.0854,
+    "p_one_sided": 0.0709,
+    "significant": false
+  },
+  "holdout_backtest": {
+    "n": 24,
+    "wins": 11,
+    "win_rate": 0.4583,
+    "profit": 1813.0,
+    "roi": 0.7554
+  },
+  "venue_team_breakdown": [
+    {
+      "home_team": "Brisbane Broncos",
+      "n": 161,
+      "actual_hw": 0.6149068322981367,
+      "implied_hw": 0.6104318262101006,
+      "delta": 0.004475006088036082
+    },
+    {
+      "home_team": "Melbourne Storm",
+      "n": 11,
+      "actual_hw": 0.7272727272727273,
+      "implied_hw": 0.7226356851436367,
+      "delta": 0.004637042129090552
+    },
+    {
+      "home_team": "Manly Warringah Sea Eagles",
+      "n": 8,
+      "actual_hw": 0.5,
+      "implied_hw": 0.5078170344041414,
+      "delta": -0.007817034404141388
+    },
+    {
+      "home_team": "Canterbury Bankstown Bulldogs",
+      "n": 6,
+      "actual_hw": 0.3333333333333333,
+      "implied_hw": 0.5102649892110183,
+      "delta": -0.17693165587768495
+    },
+    {
+      "home_team": "Gold Coast Titans",
+      "n": 5,
+      "actual_hw": 0.2,
+      "implied_hw": 0.35980100755643496,
+      "delta": -0.15980100755643495
+    },
+    {
+      "home_team": "Sydney Roosters",
+      "n": 4,
+      "actual_hw": 0.5,
+      "implied_hw": 0.5528454145312794,
+      "delta": -0.052845414531279444
+    },
+    {
+      "home_team": "Cronulla Sutherland Sharks",
+      "n": 3,
+      "actual_hw": 0.3333333333333333,
+      "implied_hw": 0.35831987834708806,
+      "delta": -0.024986545013754746
+    },
+    {
+      "home_team": "New Zealand Warriors",
+      "n": 3,
+      "actual_hw": 0.3333333333333333,
+      "implied_hw": 0.3510340148908429,
+      "delta": -0.01770068155750959
+    },
+    {
+      "home_team": "Penrith Panthers",
+      "n": 3,
+      "actual_hw": 1.0,
+      "implied_hw": 0.6886566576940978,
+      "delta": 0.3113433423059022
+    },
+    {
+      "home_team": "Wests Tigers",
+      "n": 3,
+      "actual_hw": 0.6666666666666666,
+      "implied_hw": 0.5689962211701342,
+      "delta": 0.09767044549653248
+    },
+    {
+      "home_team": "Newcastle Knights",
+      "n": 2,
+      "actual_hw": 1.0,
+      "implied_hw": 0.6196760229018294,
+      "delta": 0.38032397709817056
+    },
+    {
+      "home_team": "South Sydney Rabbitohs",
+      "n": 2,
+      "actual_hw": 1.0,
+      "implied_hw": 0.6593877114108329,
+      "delta": 0.34061228858916714
+    },
+    {
+      "home_team": "St George Illawarra Dragons",
+      "n": 2,
+      "actual_hw": 0.0,
+      "implied_hw": 0.11371158759218455,
+      "delta": -0.11371158759218455
+    },
+    {
+      "home_team": "Canberra Raiders",
+      "n": 1,
+      "actual_hw": 0.0,
+      "implied_hw": 0.3278688524590164,
+      "delta": -0.3278688524590164
+    }
+  ],
+  "summary": "Suncorp Stadium does NOT show a significant fade-home signal in holdout data. Holdout HW rate: 44.7% vs implied 53.3% (p=0.071, one-sided, n=76). Holdout backtest ROI: 75.54% over 24 bets."
+}
