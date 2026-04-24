@@ -1,0 +1,75 @@
+{
+  "hypothesis_id": "H_001",
+  "p_value": 0.0001,
+  "sample_size": 25,
+  "roi_impact": -0.1211,
+  "is_significant": false,
+  "method": "Two-proportion z-test (pre/post 2019 venue HW rates) + holdout backtest (2022+)",
+  "data_window": "Baselines: pre-2022 (alltime) vs 2019\u20132021 (modern). Test: 2022\u20132025.",
+  "backtest_type": "holdout",
+  "alltime_strategy": {
+    "n": 20,
+    "wins": 11,
+    "win_rate": 0.55,
+    "profit": 475.0,
+    "roi": 0.2375
+  },
+  "modern_strategy": {
+    "n": 25,
+    "wins": 13,
+    "win_rate": 0.52,
+    "profit": 291.0,
+    "roi": 0.1164
+  },
+  "venue_tests": {
+    "Campbelltown Sports Stadium": {
+      "n_pre_2019": 98,
+      "hw_rate_pre_2019": 0.398,
+      "n_2019_plus": 26,
+      "hw_rate_2019_plus": 0.3077,
+      "delta": -0.0903,
+      "p_value": 0.399,
+      "significant": false
+    },
+    "AAMI Park": {
+      "n_pre_2019": 114,
+      "hw_rate_pre_2019": 0.7456,
+      "n_2019_plus": 57,
+      "hw_rate_2019_plus": 0.7895,
+      "delta": 0.0439,
+      "p_value": 0.5266,
+      "significant": false
+    },
+    "Cbus Super Stadium": {
+      "n_pre_2019": 131,
+      "hw_rate_pre_2019": 0.4656,
+      "n_2019_plus": 81,
+      "hw_rate_2019_plus": 0.4074,
+      "delta": -0.0582,
+      "p_value": 0.4069,
+      "significant": false
+    },
+    "Queensland Sport and Athletics Centre": {
+      "skipped": true,
+      "reason": "insufficient sample"
+    },
+    "Sydney Showground": {
+      "skipped": true,
+      "reason": "insufficient sample"
+    },
+    "Olympic Park Stadium": {
+      "skipped": true,
+      "reason": "insufficient sample"
+    },
+    "BlueBet Stadium": {
+      "n_pre_2019": 248,
+      "hw_rate_pre_2019": 0.5524,
+      "n_2019_plus": 62,
+      "hw_rate_2019_plus": 0.8226,
+      "delta": 0.2702,
+      "p_value": 0.0001,
+      "significant": true
+    }
+  },
+  "summary": "Modern (2019+) venue baselines underperform all-time baselines on 2022+ holdout data. ROI delta: -12.11%, profit delta: $-184.00. Lowest venue p-value: 0.000. BlueBet Stadium added as new BACK HOME venue."
+}
