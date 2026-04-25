@@ -118,6 +118,9 @@ This project runs a three-model collaborative research loop:
 - `coordinator.py` references `injury_bias` without importing it — known bug, do not rely on coordinator
 - `venue_bias.py` computes baselines on full data (in-sample) — research scripts use holdout instead
 
+### New data available (as of 2026-04-24)
+- `data/raw/referee_assignments.csv` — 264 rows, 2024+ seasons, columns: season, round, match_slug, home_nickname, away_nickname, match_id, referee. Can be used for a proper holdout re-run of H_003.
+
 ### Confirmed Findings (as of 2026-04-24)
 
 | Finding | Status | Notes |
@@ -128,3 +131,7 @@ This project runs a three-model collaborative research loop:
 | Suncorp Stadium FADE | EXPLORATORY | p=0.071, n=24 holdout — do not trade yet |
 | Blanket baseline recalibration (H_001) | REJECTED | Modern baselines underperform all-time on holdout |
 | 45–55% Betfair calibration edge | REJECTED | p=0.18, n=32 — small-sample noise |
+| BK line movement (H_007) | REJECTED | ROI delta -4.6% on holdout |
+| Overround intensity (H_008) | REJECTED | No calibration difference across margin buckets |
+| Full odds-curve calibration (H_009) | REJECTED | Near-flip bucket p=0.060 — borderline, direction reversal in H_010 |
+| Referee/DoW bias (H_003) | EXPLORATORY (in-sample) | p=0.184 DoW, p=0.713 ref. Referee data now available for holdout re-run |

@@ -24,10 +24,17 @@ PROCESSED = ROOT / "data" / "processed"
 # Target venues and thresholds
 # ---------------------------------------------------------------------------
 BACK_HOME_VENUES = {
+    # H_004 (2026-04-24): AAMI Park is 100% Melbourne Storm home games — this is a
+    # team-linked venue edge, not a generic venue effect. Edge remains valid; signal
+    # mechanism is Storm's home dominance, not venue-specific crowd/travel factors.
     "AAMI Park",
     "Olympic Park Stadium",
     "Queensland Sport and Athletics Centre",
     "Sydney Showground",
+    # H_001 (2026-04-24): BlueBet Stadium confirmed BACK HOME (p=0.0001).
+    # 2019+ HW rate 82.3% (n=62). Panthers home fortress — strongest venue signal
+    # in the modern sample. Added to strategy from Round 9 2026 onwards.
+    "BlueBet Stadium",
 }
 
 FADE_HOME_VENUES = {

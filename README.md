@@ -13,7 +13,7 @@ Identify and exploit statistically significant pricing inefficiencies in Austral
 | Signal | Venue / Condition | Base Rate | ROI (backtest) | Status |
 |---|---|---|---|---|
 | Back home | AAMI Park (Melbourne Storm) | 78.9% HW | +20.1% | Live |
-| Back home | BlueBet Stadium (Panthers) | 82.3% HW | Confirmed | Add to strategy |
+| Back home | BlueBet Stadium (Panthers) | 82.3% HW | Confirmed | **Live (added R9 2026)** |
 | Back home | Olympic Park, QSAC, Sydney Showground | ~75% HW | Live | Live |
 | Fade home | Campbelltown Sports Stadium | 30.8% HW | Live | Live |
 | Weather overlay | Wet conditions | −4.8 pts/game | p<0.0001 | Use for overs/unders |

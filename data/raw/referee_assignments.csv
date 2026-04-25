@@ -1,0 +1,265 @@
+season,round,match_slug,home_nickname,away_nickname,match_id,referee
+2024,1,sea-eagles-v-rabbitohs,Sea Eagles,Rabbitohs,,Ashley Klein
+2024,1,roosters-v-broncos,Roosters,Broncos,,Adam Gee
+2024,1,knights-v-raiders,Knights,Raiders,,Todd Smith
+2024,1,warriors-v-sharks,Warriors,Sharks,,Peter Gough
+2024,1,storm-v-panthers,Storm,Panthers,,Gerard Sutton
+2024,1,eels-v-bulldogs,Eels,Bulldogs,,Grant Atkins
+2024,1,titans-v-dragons,Titans,Dragons,,Ziggy Przeklasa-Adamski
+2024,1,dolphins-v-cowboys,Dolphins,Cowboys,,Chris Butler
+2025,1,raiders-v-warriors,Raiders,Warriors,,Grant Atkins
+2025,1,panthers-v-sharks,Panthers,Sharks,,Ashley Klein
+2025,1,wests-tigers-v-knights,Wests Tigers,Knights,,Liam Kennedy
+2025,1,dolphins-v-rabbitohs,Rabbitohs,Dolphins,,Adam Gee
+2025,1,dragons-v-bulldogs,Dragons,Bulldogs,,Todd Smith
+2025,1,sea-eagles-v-cowboys,Sea Eagles,Cowboys,,Peter Gough
+2025,1,storm-v-eels,Storm,Eels,,Wyatt Raymond
+2021,1,storm-v-rabbitohs,Storm,Rabbitohs,,Grant Atkins
+2021,1,knights-v-bulldogs,Knights,Bulldogs,,Ben Cummins
+2021,1,broncos-v-eels,Broncos,Eels,,Adam Gee
+2021,1,warriors-v-titans,Warriors,Titans,,Ashley Klein
+2021,1,roosters-v-sea-eagles,Roosters,Sea Eagles,,Chris Sutton
+2021,1,panthers-v-cowboys,Panthers,Cowboys,,Matt Cecchin
+2021,1,raiders-v-wests-tigers,Raiders,Wests Tigers,,Gerard Sutton
+2021,1,dragons-v-sharks,Dragons,Sharks,,Peter Gough
+2021,2,eels-v-storm,Eels,Storm,,Ashley Klein
+2021,2,warriors-v-knights,Warriors,Knights,,Grant Atkins
+2021,2,titans-v-broncos,Titans,Broncos,,Matt Cecchin
+2021,2,bulldogs-v-panthers,Bulldogs,Panthers,,Peter Gough
+2021,2,cowboys-v-dragons,Cowboys,Dragons,,Ben Cummins
+2021,2,wests-tigers-v-roosters,Wests Tigers,Roosters,,Adam Gee
+2021,2,sharks-v-raiders,Sharks,Raiders,,Chris Sutton
+2021,3,panthers-v-storm,Panthers,Storm,,Grant Atkins
+2021,3,dragons-v-sea-eagles,Dragons,Sea Eagles,,Chris Sutton
+2021,3,rabbitohs-v-roosters,Rabbitohs,Roosters,,Ashley Klein
+2021,3,broncos-v-bulldogs,Broncos,Bulldogs,,Ben Cummins
+2021,3,eels-v-sharks,Eels,Sharks,,Adam Gee
+2021,3,knights-v-wests-tigers,Knights,Wests Tigers,,Gerard Sutton
+2021,3,cowboys-v-titans,Cowboys,Titans,,Peter Gough
+2021,4,sea-eagles-v-panthers,Sea Eagles,Panthers,,Matt Cecchin
+2021,4,bulldogs-v-rabbitohs,Bulldogs,Rabbitohs,,Grant Atkins
+2021,4,storm-v-broncos,Storm,Broncos,,Gerard Sutton
+2021,4,sharks-v-cowboys,Sharks,Cowboys,,Chris Sutton
+2021,4,titans-v-raiders,Titans,Raiders,,Adam Gee
+2021,4,knights-v-dragons,Knights,Dragons,,Peter Gough
+2021,4,roosters-v-warriors,Roosters,Warriors,,Ben Cummins
+2021,4,wests-tigers-v-eels,Wests Tigers,Eels,,Ashley Klein
+2021,5,rabbitohs-v-broncos,Rabbitohs,Broncos,,Ben Cummins
+2021,5,warriors-v-sea-eagles,Warriors,Sea Eagles,,Chris Butler
+2021,5,panthers-v-raiders,Panthers,Raiders,,Gerard Sutton
+2021,5,titans-v-knights,Titans,Knights,,Ashley Klein
+2021,5,bulldogs-v-storm,Bulldogs,Storm,,Chris Sutton
+2021,5,roosters-v-sharks,Roosters,Sharks,,Adam Gee
+2021,5,wests-tigers-v-cowboys,Wests Tigers,Cowboys,,Matt Cecchin
+2021,5,eels-v-dragons,Eels,Dragons,,Grant Atkins
+2021,6,broncos-v-panthers,Broncos,Panthers,,Grant Atkins
+2021,6,knights-v-sharks,Knights,Sharks,,Matt Cecchin
+2021,6,storm-v-roosters,Storm,Roosters,,Adam Gee
+2021,6,sea-eagles-v-titans,Sea Eagles,Titans,,Chris Butler
+2021,6,rabbitohs-v-wests-tigers,Rabbitohs,Wests Tigers,,Gerard Sutton
+2021,6,raiders-v-eels,Raiders,Eels,,Ben Cummins
+2021,6,dragons-v-warriors,Dragons,Warriors,,Chris Sutton
+2021,6,cowboys-v-bulldogs,Cowboys,Bulldogs,,Ashley Klein
+2021,7,panthers-v-knights,Panthers,Knights,,Gerard Sutton
+2021,7,titans-v-rabbitohs,Titans,Rabbitohs,,Chris Sutton
+2021,7,eels-v-broncos,Eels,Broncos,,Grant Atkins
+2021,7,sharks-v-bulldogs,Sharks,Bulldogs,,Chris Butler
+2021,7,cowboys-v-raiders,Cowboys,Raiders,,Peter Gough
+2021,7,wests-tigers-v-sea-eagles,Wests Tigers,Sea Eagles,,Adam Gee
+2021,7,roosters-v-dragons,Roosters,Dragons,,Ashley Klein
+2021,7,storm-v-warriors,Storm,Warriors,,Matt Cecchin
+2021,8,raiders-v-rabbitohs,Raiders,Rabbitohs,,Ben Cummins
+2021,8,storm-v-sharks,Storm,Sharks,,Gerard Sutton
+2021,8,broncos-v-titans,Broncos,Titans,,Adam Gee
+2021,8,panthers-v-sea-eagles,Panthers,Sea Eagles,,Ashley Klein
+2021,8,bulldogs-v-eels,Bulldogs,Eels,,Peter Gough
+2021,8,knights-v-roosters,Knights,Roosters,,Matt Cecchin
+2021,8,warriors-v-cowboys,Warriors,Cowboys,,Chris Butler
+2021,8,dragons-v-wests-tigers,Dragons,Wests Tigers,,Chris Sutton
+2021,9,rabbitohs-v-storm,Rabbitohs,Storm,,Grant Atkins
+2021,9,eels-v-roosters,Eels,Roosters,,Matt Cecchin
+2021,9,raiders-v-knights,Raiders,Knights,,Adam Gee
+2021,9,wests-tigers-v-titans,Wests Tigers,Titans,,Ashley Klein
+2021,9,cowboys-v-broncos,Cowboys,Broncos,,Chris Sutton
+2021,9,sea-eagles-v-warriors,Sea Eagles,Warriors,,Peter Gough
+2021,10,sea-eagles-v-broncos,Sea Eagles,Broncos,,Gerard Sutton
+2021,10,bulldogs-v-raiders,Bulldogs,Raiders,,Chris Butler
+2021,10,sharks-v-rabbitohs,Sharks,Rabbitohs,,Chris Sutton
+2021,10,roosters-v-cowboys,Roosters,Cowboys,,Ben Cummins
+2021,10,warriors-v-eels,Warriors,Eels,,Ashley Klein
+2021,10,storm-v-dragons,Storm,Dragons,,Peter Gough
+2021,10,titans-v-panthers,Titans,Panthers,,Adam Gee
+2021,11,cowboys-v-knights,Cowboys,Knights,,Ashley Klein
+2021,11,warriors-v-wests-tigers,Warriors,Wests Tigers,,Matt Noyen
+2021,11,sharks-v-dragons,Sharks,Dragons,,Ben Cummins
+2021,11,titans-v-bulldogs,Titans,Bulldogs,,Matt Cecchin
+2021,11,raiders-v-storm,Raiders,Storm,,Gerard Sutton
+2021,11,rabbitohs-v-panthers,Rabbitohs,Panthers,,Grant Atkins
+2021,11,eels-v-sea-eagles,Eels,Sea Eagles,,Adam Gee
+2021,12,broncos-v-storm,Broncos,Storm,,Ashley Klein
+2021,12,cowboys-v-warriors,Cowboys,Warriors,,Matt Cecchin
+2021,12,wests-tigers-v-dragons,Wests Tigers,Dragons,,Adam Gee
+2021,12,panthers-v-bulldogs,Panthers,Bulldogs,,Matt Noyen
+2021,12,rabbitohs-v-eels,Rabbitohs,Eels,,Gerard Sutton
+2021,12,roosters-v-raiders,Roosters,Raiders,,Grant Atkins
+2021,12,sharks-v-titans,Sharks,Titans,,Chris Sutton
+2021,12,knights-v-sea-eagles,Knights,Sea Eagles,,Ben Cummins
+2021,13,dragons-v-broncos,Dragons,Broncos,,Matt Cecchin
+2021,13,wests-tigers-v-panthers,Wests Tigers,Panthers,,Grant Atkins
+2021,13,storm-v-titans,Storm,Titans,,Chris Butler
+2021,13,knights-v-eels,Knights,Eels,,Adam Gee
+2021,14,sharks-v-panthers,Sharks,Panthers,,Ashley Klein
+2021,14,titans-v-roosters,Titans,Roosters,,Ben Cummins
+2021,14,rabbitohs-v-knights,Rabbitohs,Knights,,Chris Butler
+2021,14,raiders-v-broncos,Raiders,Broncos,,Chris Sutton
+2021,14,warriors-v-storm,Warriors,Storm,,Matt Cecchin
+2021,14,eels-v-wests-tigers,Eels,Wests Tigers,,Grant Atkins
+2021,14,bulldogs-v-dragons,Bulldogs,Dragons,,Gerard Sutton
+2021,15,broncos-v-rabbitohs,Broncos,Rabbitohs,,Adam Gee
+2021,15,cowboys-v-sharks,Cowboys,Sharks,,Peter Gough
+2021,15,panthers-v-roosters,Panthers,Roosters,,Ashley Klein
+2021,15,knights-v-warriors,Knights,Warriors,,Chris Butler
+2021,15,dragons-v-raiders,Dragons,Raiders,,Chris Sutton
+2021,15,storm-v-wests-tigers,Storm,Wests Tigers,,Gerard Sutton
+2021,15,titans-v-sea-eagles,Titans,Sea Eagles,,Grant Atkins
+2021,16,roosters-v-storm,Roosters,Storm,,Adam Gee
+2021,16,warriors-v-dragons,Warriors,Dragons,,Peter Gough
+2021,16,panthers-v-eels,Panthers,Eels,,Ashley Klein
+2021,16,bulldogs-v-sea-eagles,Bulldogs,Sea Eagles,,Gerard Sutton
+2021,16,raiders-v-titans,Raiders,Titans,,Matt Cecchin
+2021,16,knights-v-cowboys,Knights,Cowboys,,Chris Sutton
+2021,16,broncos-v-sharks,Broncos,Sharks,,Ben Cummins
+2021,16,wests-tigers-v-rabbitohs,Wests Tigers,Rabbitohs,,Grant Atkins
+2021,17,sea-eagles-v-raiders,Sea Eagles,Raiders,,Adam Gee
+2021,17,rabbitohs-v-cowboys,Rabbitohs,Cowboys,,Matt Cecchin
+2021,17,bulldogs-v-roosters,Bulldogs,Roosters,,Adam Gee
+2021,17,sharks-v-warriors,Sharks,Warriors,,Chris Sutton
+2021,18,titans-v-eels,Titans,Eels,,Matt Cecchin
+2021,18,sea-eagles-v-dragons,Sea Eagles,Dragons,,Adam Gee
+2021,18,cowboys-v-roosters,Cowboys,Roosters,,Ashley Klein
+2021,18,raiders-v-sharks,Raiders,Sharks,,Grant Atkins
+2021,18,storm-v-knights,Storm,Knights,,Chris Sutton
+2021,18,warriors-v-panthers,Warriors,Panthers,,Chris Butler
+2021,18,broncos-v-wests-tigers,Broncos,Wests Tigers,,Gerard Sutton
+2021,18,rabbitohs-v-bulldogs,Rabbitohs,Bulldogs,,Ben Cummins
+2021,19,eels-v-raiders,Eels,Raiders,,Adam Gee
+2021,19,roosters-v-knights,Roosters,Knights,,Gerard Sutton
+2021,19,cowboys-v-storm,Cowboys,Storm,,Matt Cecchin
+2021,19,rabbitohs-v-warriors,Rabbitohs,Warriors,,Chris Butler
+2021,19,sea-eagles-v-wests-tigers,Sea Eagles,Wests Tigers,,Ashley Klein
+2021,19,panthers-v-broncos,Panthers,Broncos,,Ben Cummins
+2021,19,dragons-v-titans,Dragons,Titans,,Grant Atkins
+2021,19,bulldogs-v-sharks,Bulldogs,Sharks,,Chris Sutton
+2021,20,roosters-v-eels,Roosters,Eels,,Grant Atkins
+2021,20,wests-tigers-v-warriors,Wests Tigers,Warriors,,Ben Cummins
+2021,20,broncos-v-cowboys,Broncos,Cowboys,,Chris Sutton
+2021,20,dragons-v-rabbitohs,Dragons,Rabbitohs,,Chris Butler
+2021,20,bulldogs-v-titans,Bulldogs,Titans,,Matt Cecchin
+2021,20,sharks-v-sea-eagles,Sharks,Sea Eagles,,Gerard Sutton
+2021,21,knights-v-broncos,Knights,Broncos,,Grant Atkins
+2021,21,raiders-v-dragons,Raiders,Dragons,,Chris Sutton
+2021,21,eels-v-rabbitohs,Eels,Rabbitohs,,Ashley Klein
+2021,21,roosters-v-panthers,Roosters,Panthers,,Gerard Sutton
+2021,21,sea-eagles-v-storm,Sea Eagles,Storm,,Adam Gee
+2021,21,bulldogs-v-wests-tigers,Bulldogs,Wests Tigers,,Chris Butler
+2021,21,titans-v-cowboys,Titans,Cowboys,,Ben Cummins
+2021,22,storm-v-raiders,Storm,Raiders,,Gerard Sutton
+2021,22,dragons-v-panthers,Dragons,Panthers,,Ben Cummins
+2021,22,broncos-v-roosters,Broncos,Roosters,,Ashley Klein
+2021,22,rabbitohs-v-titans,Rabbitohs,Titans,,Adam Gee
+2021,22,cowboys-v-wests-tigers,Cowboys,Wests Tigers,,Chris Sutton
+2021,22,sea-eagles-v-eels,Sea Eagles,Eels,,Grant Atkins
+2021,22,warriors-v-bulldogs,Warriors,Bulldogs,,Peter Gough
+2021,22,sharks-v-knights,Sharks,Knights,,Matt Cecchin
+2021,23,titans-v-storm,Titans,Storm,,Ben Cummins
+2021,23,raiders-v-sea-eagles,Raiders,Sea Eagles,,Adam Gee
+2021,23,panthers-v-rabbitohs,Panthers,Rabbitohs,,Grant Atkins
+2021,23,wests-tigers-v-sharks,Wests Tigers,Sharks,,Gerard Sutton
+2021,23,bulldogs-v-knights,Bulldogs,Knights,,Peter Gough
+2021,23,eels-v-cowboys,Eels,Cowboys,,Ashley Klein
+2021,23,dragons-v-roosters,Dragons,Roosters,,Chris Sutton
+2021,23,broncos-v-warriors,Broncos,Warriors,,Matt Cecchin
+2021,24,knights-v-titans,Knights,Titans,,Grant Atkins
+2021,24,warriors-v-raiders,Warriors,Raiders,,Ben Cummins
+2021,24,roosters-v-rabbitohs,Roosters,Rabbitohs,,Ashley Klein
+2021,24,dragons-v-cowboys,Dragons,Cowboys,,Peter Gough
+2021,24,sharks-v-broncos,Sharks,Broncos,,Adam Gee
+2021,24,sea-eagles-v-bulldogs,Sea Eagles,Bulldogs,,Chris Sutton
+2021,24,panthers-v-wests-tigers,Panthers,Wests Tigers,,Matt Cecchin
+2021,25,raiders-v-roosters,Raiders,Roosters,,Gerard Sutton
+2021,25,sharks-v-storm,Sharks,Storm,,Grant Atkins
+2021,25,eels-v-panthers,Eels,Panthers,,Adam Gee
+2021,25,broncos-v-knights,Broncos,Knights,,Ziggy Przeklasa-Adamski
+2021,25,cowboys-v-sea-eagles,Cowboys,Sea Eagles,,Ben Cummins
+2021,25,rabbitohs-v-dragons,Rabbitohs,Dragons,,Matt Cecchin
+2021,25,titans-v-warriors,Titans,Warriors,,Ashley Klein
+2021,25,wests-tigers-v-bulldogs,Wests Tigers,Bulldogs,,Chris Sutton
+2022,1,wests-tigers-v-storm,Wests Tigers,Storm,,Chris Sutton
+2022,1,eels-v-titans,Eels,Titans,,Grant Atkins
+2022,2,sharks-v-eels,Sharks,Eels,,Peter Gough
+2022,2,bulldogs-v-broncos,Bulldogs,Broncos,,Ziggy Przeklasa-Adamski
+2022,4,titans-v-wests-tigers,Titans,Wests Tigers,,Grant Atkins
+2022,4,warriors-v-broncos,Warriors,Broncos,,Chris Sutton
+2022,4,storm-v-bulldogs,Storm,Bulldogs,,Adam Gee
+2022,5,sharks-v-wests-tigers,Sharks,Wests Tigers,,Adam Gee
+2022,6,raiders-v-cowboys,Raiders,Cowboys,,Ashley Klein
+2022,6,dragons-v-knights,Dragons,Knights,,Ben Cummins
+2022,8,rabbitohs-v-sea-eagles,Rabbitohs,Sea Eagles,,Grant Atkins
+2022,8,knights-v-storm,Knights,Storm,,Liam Kennedy
+2022,9,raiders-v-bulldogs,Raiders,Bulldogs,,Ben Cummins
+2022,9,roosters-v-titans,Roosters,Titans,,Chris Butler
+2022,10,warriors-v-rabbitohs,Warriors,Rabbitohs,,Ben Cummins
+2022,11,rabbitohs-v-raiders,Rabbitohs,Raiders,,Peter Gough
+2022,11,titans-v-sharks,Titans,Sharks,,Ashley Klein
+2022,12,storm-v-sea-eagles,Storm,Sea Eagles,,Adam Gee
+2022,12,sharks-v-roosters,Sharks,Roosters,,Grant Atkins
+2022,14,broncos-v-raiders,Broncos,Raiders,,Grant Atkins
+2022,14,knights-v-panthers,Knights,Panthers,,Ben Cummins
+2022,17,knights-v-rabbitohs,Knights,Rabbitohs,,Todd Smith
+2022,17,broncos-v-dragons,Broncos,Dragons,,Grant Atkins
+2022,18,eels-v-warriors,Eels,Warriors,,Todd Smith
+2022,18,sea-eagles-v-knights,Sea Eagles,Knights,,Gerard Sutton
+2022,20,sea-eagles-v-roosters,Sea Eagles,Roosters,,Grant Atkins
+2022,21,raiders-v-panthers,Raiders,Panthers,,Grant Atkins
+2022,21,bulldogs-v-cowboys,Bulldogs,Cowboys,,Adam Gee
+2022,23,sea-eagles-v-sharks,Sea Eagles,Sharks,,Gerard Sutton
+2022,23,roosters-v-wests-tigers,Roosters,Wests Tigers,,Ben Cummins
+2022,24,panthers-v-warriors,Panthers,Warriors,,Chris Butler
+2022,25,cowboys-v-panthers,Cowboys,Panthers,,Todd Smith
+2022,25,wests-tigers-v-raiders,Wests Tigers,Raiders,,Gerard Sutton
+2023,1,dolphins-v-roosters,Dolphins,Roosters,,Chris Butler
+2023,2,dolphins-v-raiders,Dolphins,Raiders,,Todd Smith
+2023,3,knights-v-dolphins,Knights,Dolphins,,Chris Butler
+2023,4,dolphins-v-broncos,Dolphins,Broncos,,Adam Gee
+2023,5,dragons-v-dolphins,Dragons,Dolphins,,Gerard Sutton
+2023,6,cowboys-v-dolphins,Cowboys,Dolphins,,Adam Gee
+2023,8,dolphins-v-titans,Dolphins,Titans,,Chris Butler
+2023,9,eels-v-knights,Eels,Knights,,Chris Sutton
+2023,9,raiders-v-dolphins,Raiders,Dolphins,,Peter Gough
+2023,9,warriors-v-roosters,Warriors,Roosters,,Chris Butler
+2023,10,sharks-v-dolphins,Sharks,Dolphins,,Grant Atkins
+2023,11,bulldogs-v-warriors,Bulldogs,Warriors,,Ben Cummins
+2023,12,dolphins-v-storm,Dolphins,Storm,,Grant Atkins
+2023,13,dolphins-v-dragons,Dolphins,Dragons,,Adam Gee
+2023,14,warriors-v-dolphins,Warriors,Dolphins,,Grant Atkins
+2023,14,roosters-v-bulldogs,Roosters,Bulldogs,,Ashley Klein
+2023,14,panthers-v-dragons,Panthers,Dragons,,Chris Sutton
+2023,15,sea-eagles-v-dolphins,Sea Eagles,Dolphins,,Gerard Sutton
+2023,17,dolphins-v-eels,Dolphins,Eels,,Peter Gough
+2023,18,broncos-v-dolphins,Broncos,Dolphins,,Peter Gough
+2023,19,titans-v-dolphins,Titans,Dolphins,,Grant Atkins
+2023,20,dolphins-v-panthers,Dolphins,Panthers,,Todd Smith
+2023,21,cowboys-v-eels,Cowboys,Eels,,Grant Atkins
+2023,22,bulldogs-v-dolphins,Bulldogs,Dolphins,,Peter Gough
+2023,23,dolphins-v-knights,Dolphins,Knights,,Grant Atkins
+2023,23,rabbitohs-v-sharks,Rabbitohs,Sharks,,Todd Smith
+2023,24,roosters-v-dolphins,Roosters,Dolphins,,Todd Smith
+2023,25,wests-tigers-v-dolphins,Wests Tigers,Dolphins,,Ben Cummins
+2023,25,dragons-v-storm,Dragons,Storm,,Peter Gough
+2023,27,dolphins-v-warriors,Dolphins,Warriors,,Gerard Sutton
+2018,3,storm-v-cowboys,Storm,Cowboys,,Matt Cecchin
+2018,3,wests-tigers-v-broncos,Wests Tigers,Broncos,,Ashley Klein
+2018,6,panthers-v-titans,Panthers,Titans,,Chris Sutton
+2018,11,cowboys-v-rabbitohs,Cowboys,Rabbitohs,,Chris Sutton
+2018,16,dragons-v-eels,Dragons,Eels,,Ben Cummins
+2018,25,broncos-v-sea-eagles,Broncos,Sea Eagles,,Ben Cummins

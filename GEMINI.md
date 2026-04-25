@@ -44,29 +44,30 @@ Claude scripts save to `research/results/R_XXX.json`:
 - **Run Analysis:** `python3 research/scripts/H_XXX_analysis.py`
 - **Check Progress:** `cat PROGRESS.md`
 
-## Current Queue (as of 2026-04-24)
+## Current Queue (updated 2026-04-24, session 7)
 
 ### Scripts awaiting Gemini verification
 
 | Script | Status | Notes |
 |---|---|---|
-| `H_001_analysis.py` | R_001.json exists | Reviewed by Claude — see RESPONSE_FROM_CLAUDE.md. Split finding: BlueBet CONFIRMED, blanket recalibration REJECTED |
-| `H_002_analysis.py` | R_002.json exists | Reviewed by Claude — p=0.071, n=24 holdout bets. Mark EXPLORATORY, do not trade |
-| `H_004_analysis.py` | **Pending run** | `python3 research/scripts/H_004_analysis.py` — checks if AAMI Park is Storm-only |
-| `H_006_analysis.py` | **Pending run** | `python3 research/scripts/H_006_analysis.py` — BK/BF disagreement filter |
+| `H_010_analysis.py` | **Pending run** | `python3 research/scripts/H_010_analysis.py` — near-flip prospective design |
 
 ### Pending Gemini actions
-1. Run `H_004_analysis.py` → verify `composition.storm_pct` and `classification` field in R_004.json
-2. Run `H_006_analysis.py` → verify `is_exploratory` flags; enforce n≥30 gate
-3. Update `PROGRESS.md` with H_004 and H_006 outcomes after verification
-4. If H_004 confirms Storm-only: update `data/processed/findings.md` to reclassify AAMI Park edge as team-linked
-5. BlueBet Stadium: once H_001 split decision is accepted, add to production strategy in `src/strategy/venue_bias.py`
+1. Run `H_010_analysis.py` — check `direction_reversal_detected` field in R_010.json. If true, mark REJECTED (noise). If false and p<0.05, consider exploratory strategy branch.
+2. Flag R_003.json as `[IN-SAMPLE, NOT VALIDATED]` in `data/processed/findings.md` — the result used in-sample data only.
+3. Verify `src/strategy/venue_bias.py` BlueBet Stadium addition (committed by Claude this session) — run backtest to confirm no regressions.
+4. Consider H_003 holdout re-run: `data/raw/referee_assignments.csv` (264 rows, 2024+) is now available. A proper holdout test is possible if the referee data can be joined to `nrl_clean.csv` via match_id or date/team matching.
 
-## Confirmed Results (Claude's analysis)
+## Confirmed Results (all H_001–H_009 verified)
 
 | Hypothesis | Verdict | p-value | Action |
 |---|---|---|---|
-| H_001 (venue recalibration) | REJECTED (global) / CONFIRMED (BlueBet) | p=0.0001 (BlueBet) | Promote BlueBet only |
+| H_001 (venue recalibration) | REJECTED global / CONFIRMED BlueBet | p=0.0001 | ✓ BlueBet added to strategy |
 | H_002 (Suncorp fade) | EXPLORATORY | p=0.071 | No strategy branch |
-| H_004 (AAMI Park decomp) | Pending | — | Expected: team-linked classification |
-| H_006 (disagreement filter) | Pending | — | Expected: exploratory (thin Betfair window) |
+| H_003 (referee/DoW) | EXPLORATORY — in-sample only | p=0.184 DoW | Flag in findings.md |
+| H_004 (AAMI Park decomp) | CONFIRMED team-linked | Storm 100% | ✓ Annotated in strategy |
+| H_006 (BK/BF disagreement) | EXPLORATORY | n=6 holdout | No strategy branch |
+| H_007 (BK line movement) | REJECTED | ROI -4.6% | Done |
+| H_008 (overround intensity) | REJECTED | — | Done |
+| H_009 (odds-curve calibration) | REJECTED | p=0.076 | Done — near-flip → H_010 |
+| H_010 (near-flip prospective) | **Pending** | — | Run script |

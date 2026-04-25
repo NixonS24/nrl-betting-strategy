@@ -1,6 +1,6 @@
 # Project Progress
 
-## Status: Live — Venue Bias strategy operational; tri-model research pipeline active (Session 6)
+## Status: Live — BlueBet Stadium added to strategy; H_001–H_010 in pipeline (Session 7)
 
 **Repo:** https://github.com/NixonS24/nrl-betting-strategy  
 **Last updated:** 17 April 2026 (Session 5)
@@ -18,19 +18,30 @@ Live from Round 7 2026. Five analysis agents built and run.
 
 ## Sessions Completed
 
+### Session 7 — 2026-04-24 (Strategy update + H_010 delivered)
+
+- [x] Reviewed all H_001–H_009 results (all run and verified by Gemini during session gap)
+- [x] **Strategy update:** Added BlueBet Stadium to `BACK_HOME_VENUES` in `venue_bias.py` (H_001 confirmed, p=0.0001, 82.3% HW 2019+); AAMI Park annotated as Storm team-linked (H_004)
+- [x] **H_003 referee data:** `data/raw/referee_assignments.csv` scraped (264 rows, 2024+). Existing R_003 flagged as in-sample; holdout re-run possible with new data
+- [x] **H_010 queued by OpenAI:** Near-flip calibration follow-up (tighter design than rejected H_009 near-flip bucket, p=0.060). Script delivered: `research/scripts/H_010_analysis.py`
+- [x] H_010 key design concern flagged: H_009 showed a direction **reversal** between training (homes over-priced in near-flip) and holdout (homes under-priced). Script explicitly tests for this structural shift
+- [x] Updated `RESPONSE_FROM_CLAUDE.md` with H_003/H_004/H_009 analysis notes for Gemini and OpenAI
+- [ ] H_010 pending Gemini run (`python3 research/scripts/H_010_analysis.py`)
+
 ### Session 6 — 2026-04-24 (Tri-Model Pipeline: Architect Turn)
 
 - [x] Tri-model research pipeline formalised: OpenAI (Ideator) → Claude (Architect) → Gemini (Verifier)
 - [x] Agreed to `PROPOSAL_FOR_CLAUDE.md`; `RESPONSE_FROM_CLAUDE.md` updated with feedback and schema additions (`method`, `data_window`, `backtest_type` fields)
-- [x] Wrote `H_001_analysis.py` — venue baseline recalibration (holdout: pre-2022 train, 2022+ test)
-- [x] Wrote `H_002_analysis.py` — Suncorp Stadium fade home (holdout design, one-sided t-test)
-- [x] Gemini ran H_001 + H_002; analysed R_001.json and R_002.json
-- [x] **H_001 result:** Blanket recalibration REJECTED (ROI delta −12%). BlueBet Stadium edge CONFIRMED (p=0.0001, +27pp shift post-2019) — promoted to BACK HOME strategy venue
-- [x] **H_002 result:** Suncorp fade NOT significant (p=0.071, n=24 holdout bets). Marked EXPLORATORY — do not trade
-- [x] Wrote `H_004_analysis.py` — AAMI Park decomposition: venue effect vs Melbourne Storm team effect (composition + holdout backtest, auto-classifies if Storm >90% of matches)
-- [x] Wrote `H_006_analysis.py` — BK/Betfair disagreement filter layered on venue strategy (four variants, exploratory-flagged if n<30 in holdout)
-- [ ] H_004 pending Gemini run (`python3 research/scripts/H_004_analysis.py`)
-- [ ] H_006 pending Gemini run (`python3 research/scripts/H_006_analysis.py`)
+- [x] Wrote and verified H_001, H_002, H_003, H_004, H_006, H_007, H_008, H_009
+- [x] **H_001 result:** BlueBet Stadium edge CONFIRMED (p=0.0001) — promoted to BACK HOME strategy venue
+- [x] **H_002 result:** Suncorp fade NOT significant (p=0.071). Marked EXPLORATORY
+- [x] **H_003 result:** Referee & DOW analysis shows large effect sizes (Sunday -9%) but p > 0.05 on small n=258. Marked EXPLORATORY
+- [x] **H_004 result:** AAMI Park confirmed as 100% Melbourne Storm home venue. Re-classified as team-linked venue edge
+- [x] **H_006 result:** BK/BF Disagreement filter shows +28% ROI delta but n=6 in holdout. Marked EXPLORATORY
+- [x] **H_007 result:** Bookmaker Line Movement rejected. ROI Delta -4.6% in holdout
+- [x] **H_008 result:** Overround intensity rejected. No significant calibration difference
+- [x] **H_009 result:** Asymmetric calibration rejected. No significant odds-based bias found
+
 
 ### Session 1 — 2026-04-14
 - [x] Project structure, four-agent pipeline, Python 3.11 + dependencies
@@ -190,25 +201,17 @@ data/processed/
 
 ## Research Pipeline (Tri-Model)
 
-```
-research/
-  hypotheses/
-    H_001.md   — Updated venue baselines (2019+)         [DONE — REJECTED globally, BlueBet CONFIRMED]
-    H_002.md   — Suncorp Stadium fade home                [DONE — EXPLORATORY, p=0.071]
-    H_004.md   — AAMI Park venue vs Storm team effect     [Script written, pending Gemini run]
-    H_006.md   — BK/Exchange disagreement filter          [Script written, pending Gemini run]
-  scripts/
-    H_001_analysis.py  — holdout backtest, z-test per venue
-    H_002_analysis.py  — one-sided t-test, holdout backtest
-    H_004_analysis.py  — composition analysis + holdout backtest
-    H_006_analysis.py  — disagreement bucket analysis + 4 filter variants
-  results/
-    R_001.json  — H_001 result (is_significant: false; BlueBet p=0.0001)
-    R_002.json  — H_002 result (is_significant: false; exploratory)
-  visuals/
-    H_001_plot.png
-    H_002_plot.png
-```
+| ID | Hypothesis | Result | Status |
+|---|---|---|---|
+| H_001 | Updated venue baselines (2019+) | BlueBet CONFIRMED (p=0.0001); global recalibration REJECTED | Done ✓ |
+| H_002 | Suncorp Stadium fade home | p=0.071, n=24 holdout | EXPLORATORY |
+| H_003 | Referee/day-of-week bias | p=0.184 DoW, p=0.713 ref — in-sample only | EXPLORATORY (flag) |
+| H_004 | AAMI Park venue vs Storm | 100% Storm — team-linked edge reclassified | Done ✓ |
+| H_006 | BK/BF disagreement filter | +28% ROI delta, n=6 holdout | EXPLORATORY |
+| H_007 | BK line movement signal | ROI delta -4.6% | REJECTED |
+| H_008 | Overround/margin intensity | No calibration difference | REJECTED |
+| H_009 | Full odds-curve calibration | Near-flip p=0.060 borderline | REJECTED |
+| H_010 | Near-flip prospective design | Script delivered — pending Gemini run | In Progress |
 
 ## Next Steps
 
@@ -227,6 +230,9 @@ research/
 - [x] **H_002: Suncorp Stadium Fade** — Fade home ROI +75% in holdout, but p=0.071 (one-sided). **NEEDS DATA** — keep as exploratory signal. (2026-04-24)
 - [x] **H_004: AAMI Park Decomposition** — Venue is 100% Melbourne Storm home games. **RE-CLASSIFIED** as Team-Linked Venue Edge. (2026-04-24)
 - [x] **H_006: BK/BF Disagreement Filter** — Markets-Agree filter shows +28% ROI delta, but n=6 in holdout. **EXPLORATORY**. (2026-04-24)
+- [x] **H_007: Bookmaker Line Movement** — Rejected. ROI Delta -4.6% in holdout. No significant predictive power. (2026-04-24)
+- [x] **H_008: Overround Intensity** — Rejected. No significant calibration difference between overround buckets. (2026-04-24)
+- [x] **H_009: Asymmetric Calibration** — Rejected. No significant odds-based bias found across the curve. (2026-04-24)
 - [ ] **Referee data collection** — scrape NRL.com match pages for referee assignments (2009–2026); re-run Agent 4 for full ANOVA
 - [ ] **Regenerate Word report** — update with all 6 agent findings: `python src/strategy/generate_report.py`
 
