@@ -1,5 +1,21 @@
 # Project Progress
 
+## [2026-05-25] — README updated for Claude Code onboarding
+
+### What We Did
+- Added a full "Getting Started with Claude Code" section to `README.md` covering: prerequisites, clone/setup steps, how to open in Claude Code, a prompt cheat sheet for common tasks, the tri-model pipeline diagram, and a key files reference table
+
+### Status
+- Completed:
+  - README.md updated with Claude Code onboarding guide
+- In Progress: nothing
+- Next Up:
+  - Run `python3 src/strategy/weekend_picks.py --bankroll 113.04 --round 9` (Thursday before R9)
+  - Run `python3 research/scripts/H_010_analysis.py` (Gemini pending)
+  - H_003 holdout re-run using `data/raw/referee_assignments.csv`
+
+---
+
 ## Status: Live — BlueBet Stadium added to strategy; H_001–H_010 in pipeline (Session 7)
 
 **Repo:** https://github.com/NixonS24/nrl-betting-strategy  
